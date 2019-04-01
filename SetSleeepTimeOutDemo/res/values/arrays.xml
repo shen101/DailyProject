@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="times_list_name">
+        <item>@string/minute_1</item>
+        <item>@string/minutes_2</item>
+        <item>@string/minutes_5</item>
+        <item>@string/minutes_10</item>
+        <item>@string/minutes_30</item>
+        <item>@string/never_minute</item>
+    </string-array>
+    <integer-array name="times_list_values" translatable="false">
+        <item>60000</item>
+        <item>120000</item>
+        <item>300000</item>
+        <item>600000</item>
+        <item>1800000</item>
+        <!-- -1 Means never to Off screen -->
+        <item>-1</item>
+    </integer-array>
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="times_list_name">
+        <item>@string/minute_1</item>
+        <item>@string/minutes_2</item>
+        <item>@string/minutes_5</item>
+        <item>@string/minutes_10</item>
+        <item>@string/minutes_30</item>
+        <item>@string/never_minute</item>
+    </string-array>
+
+</resources>
