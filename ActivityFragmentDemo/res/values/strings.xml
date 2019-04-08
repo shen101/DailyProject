@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ActivityFragmentDemo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="glass_text_format_time_24">HH:mm:ss</string>
+    <string name="glass_text_format_time_12">hh:mm:ss</string>
+    <string name="glass_text_settings_label_launcher">Settings</string>
+
+</resources>
