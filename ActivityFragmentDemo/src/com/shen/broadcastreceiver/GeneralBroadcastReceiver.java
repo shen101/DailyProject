@@ -1,17 +1,16 @@
 package com.shen.broadcastreceiver;
 
 import com.shen.widget.BatteryView;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.BatteryManager;
 
 public class GeneralBroadcastReceiver extends BroadcastReceiver {
-	
+
 	private int power = 0;
 	private BatteryView mBatteryView;
-	
+
 	public GeneralBroadcastReceiver(BatteryView view) {
 		super();
 		this.mBatteryView = view;
@@ -20,7 +19,8 @@ public class GeneralBroadcastReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
-		if (Intent.ACTION_BATTERY_CHANGED.equals(intent.getAction())) {
+		String intent_action = intent.getAction();
+		if (Intent.ACTION_BATTERY_CHANGED.equals(intent_action)) {
 			int level = intent.getIntExtra("level", 0);
 			int scale = intent.getIntExtra("scale", 100);
 			power = level * 100 / scale;
