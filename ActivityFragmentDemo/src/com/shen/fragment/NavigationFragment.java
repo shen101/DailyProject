@@ -10,24 +10,24 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
-public class MainTimeFragment extends BaseFragment {
+public class NavigationFragment extends BaseFragment {
 
-	private View main_time_view = null;
-	private ImageView main_time_left_image, main_time_right_image;
+	private View navigation_view = null;
+	private ImageView navigation_left_image, navigation_right_image;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		main_time_view = inflater.inflate(R.layout.main_time_fragment, container, false);
+		navigation_view = inflater.inflate(R.layout.navigation_fragment, container, false);
 		initViews();
-		return main_time_view;
+		return navigation_view;
 	}
 
 	private void initViews() {
-		main_time_left_image = (ImageView) main_time_view.findViewById(R.id.left_direction_icons);
-		main_time_right_image = (ImageView) main_time_view.findViewById(R.id.right_direction_icons);
-		main_time_left_image.setOnClickListener(MyOnLinster);
-		main_time_right_image.setOnClickListener(MyOnLinster);
+		navigation_left_image = (ImageView) navigation_view.findViewById(R.id.left_direction_icons);
+		navigation_left_image.setOnClickListener(MyOnLinster);
+		navigation_right_image = (ImageView) navigation_view.findViewById(R.id.right_direction_icons);
+		navigation_right_image.setOnClickListener(MyOnLinster);
 	}
 
 	private OnClickListener MyOnLinster = new OnClickListener() {
@@ -37,10 +37,10 @@ public class MainTimeFragment extends BaseFragment {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.left_direction_icons:
-				openVoiceFragment();
+				startMianTimeFragment();
 				break;
 			case R.id.right_direction_icons:
-				openNavigationFragment();
+				startRecordVideoFragment();
 				break;
 
 			default:
@@ -49,13 +49,12 @@ public class MainTimeFragment extends BaseFragment {
 		}
 	};
 
-	private void openNavigationFragment() {
+	private void startRecordVideoFragment() {
 		// TODO Auto-generated method stub
-		getRightTransaction(new NavigationFragment()).hide(this);
+		getRightTransaction(new RecordVideoFragment()).hide(this);
 	}
-
-	private void openVoiceFragment() {
+	private void startMianTimeFragment() {
 		// TODO Auto-generated method stub
-		getLeftTransaction(new VoiceCommandFragment()).hide(this);
+		getLeftTransaction(new MainTimeFragment()).disallowAddToBackStack().hide(this);
 	}
 }

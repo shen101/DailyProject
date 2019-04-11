@@ -2,20 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/black"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="1.4"
         android:gravity="center_horizontal" >
 
-        <TextView
+        <Chronometer
             android:id="@+id/glass_incallui_phone_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginTop="5dp"
+            android:format12Hour="@string/glass_text_timing_12"
+            android:format24Hour="@string/glass_text_timing_24"
             android:gravity="center_horizontal"
             android:text="00:00"
             android:textColor="@android:color/white"

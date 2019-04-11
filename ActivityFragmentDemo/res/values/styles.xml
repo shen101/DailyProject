@@ -18,4 +18,6 @@
         <item name="android:contentInsetRight">@dimen/glass_dimen_0_size</item>
     </style>
 
+    <style name="InCallUiStyle" parent="@style/CustomActionBarStyle" />
+
 </resources>

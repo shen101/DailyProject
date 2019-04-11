@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
-public class PhotoFragment extends BaseFragment {
+public class TakePhotoFragment extends BaseFragment {
 
 	private View photo_view = null;
-	private ImageView video_left_btn, video_right_btn;
+	private ImageView photo_left_btn, photo_right_btn;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -23,10 +23,10 @@ public class PhotoFragment extends BaseFragment {
 	}
 
 	private void initViews() {
-		video_left_btn = (ImageView) photo_view.findViewById(R.id.left_direction_icons);
-		video_left_btn.setOnClickListener(MyOnLinster);
-		video_right_btn = (ImageView) photo_view.findViewById(R.id.right_direction_icons);
-		video_right_btn.setOnClickListener(MyOnLinster);
+		photo_left_btn = (ImageView) photo_view.findViewById(R.id.left_direction_icons);
+		photo_left_btn.setOnClickListener(MyOnLinster);
+		photo_right_btn = (ImageView) photo_view.findViewById(R.id.right_direction_icons);
+		photo_right_btn.setOnClickListener(MyOnLinster);
 	}
 
 	private OnClickListener MyOnLinster = new OnClickListener() {
@@ -34,12 +34,27 @@ public class PhotoFragment extends BaseFragment {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			openOneFragment();
+			switch (v.getId()) {
+			case R.id.left_direction_icons:
+				startRecordVideoFragment();
+				break;
+			case R.id.right_direction_icons:
+				startPhoneFragment();
+				break;
+
+			default:
+				break;
+			}
 		}
 	};
 
-	private void openOneFragment() {
+	private void startPhoneFragment() {
 		// TODO Auto-generated method stub
-		getRightTransaction(new MusicFragment()).hide(this);
+		getRightTransaction(new PhoneFragment()).hide(this);
+	}
+
+	private void startRecordVideoFragment() {
+		// TODO Auto-generated method stub
+		getLeftTransaction(new RecordVideoFragment()).disallowAddToBackStack().hide(this);
 	}
 }

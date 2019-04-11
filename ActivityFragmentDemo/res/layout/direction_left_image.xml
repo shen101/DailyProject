@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/right_direction_icons"
+    android:id="@+id/left_direction_icons"
     android:layout_width="40dp"
     android:layout_height="40dp"
-    android:layout_alignParentRight="true"
+    android:layout_alignParentLeft="true"
     android:layout_centerVertical="true"
-    android:src="@drawable/glass_next_right_icons" />
+    android:rotation="180"
+    android:src="@drawable/glass_next_icons" />

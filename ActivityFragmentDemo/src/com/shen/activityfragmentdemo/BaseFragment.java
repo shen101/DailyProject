@@ -38,7 +38,7 @@ public class BaseFragment extends Fragment {
 		mTransaction.setCustomAnimations(R.anim.fragment_slide_left_in, R.anim.fragment_slide_right_out,
 				R.anim.fragment_slide_right_in, R.anim.fragment_slide_left_out);
 		mTransaction.add(R.id.id_content, mFragment);
-		mTransaction.addToBackStack(null);
+//		mTransaction.addToBackStack(null);
 		mTransaction.commit();
 		return mTransaction;
 	}

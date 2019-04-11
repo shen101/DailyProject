@@ -2,16 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-
-    <TextView
-        android:id="@+id/main_time_txt"
+    
+    <TextClock
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="MainTimeText" />
-
-    <include layout="@layout/direction_left_image" />
+        android:format24Hour="HH:mm\nEE MM月dd"
+        android:format12Hour="HH:mm\nEE MM月dd"
+        android:textStyle="normal"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:fontFamily="sans-serif-light"
+        android:textSize="72sp" />
 
     <include layout="@layout/direction_right_image" />
+
+    <include layout="@layout/direction_left_image" />
 
 </RelativeLayout>

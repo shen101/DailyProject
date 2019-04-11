@@ -15,6 +15,10 @@ public class GlassUtils {
 	private static Toast toast;
 
 	public static final String ACTION_PHONE_STATE_CHANGED = "android.intent.action.PHONE_STATE";
+	public static final String ACTION_START_INCALLUI_TAG = "com.yiyang.glass.GLASS_INCALLUI_MAIN";
+	public static final String ACTION_START_DIALPAD_TAG = "com.yiyang.glass.GLASS_DIALPAD_MAIN";
+	public static final String INTENT_INCALL_UI_NUMBER = "intent_incall_ui_number";
+	public static final int INTENT_INCALL_UI_NUM = 1000;
 
 	public static boolean isFastDoubleClick() {
 		long time = System.currentTimeMillis();

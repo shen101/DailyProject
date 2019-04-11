@@ -4,21 +4,21 @@
     android:layout_height="match_parent" >
 
     <ImageView
-        android:id="@+id/glass_voicecommand_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/glass_phone_contacts_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/ic_glass_voice" />
+        android:src="@drawable/ic_glass_contacts" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/glass_voicecommand_icon"
+        android:layout_below="@id/glass_phone_contacts_icon"
         android:layout_centerHorizontal="true"
-        android:text="@string/glass_voicecommand_title"
+        android:text="@string/glass_phone_contacts_title"
         android:textColor="@color/glass_color_white"
-        android:textSize="12sp" />
-
+        android:textSize="42sp" />
+    
     <include layout="@layout/direction_right_image" />
 
     <include layout="@layout/direction_left_image" />

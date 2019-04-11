@@ -1,19 +1,18 @@
 package com.shen.activityfragmentdemo;
 
 import com.shen.broadcastreceiver.GeneralBroadcastReceiver;
-import com.shen.fragment.InCallUIFragment;
 import com.shen.fragment.MainTimeFragment;
 import com.shen.utils.GlassUtils;
 import com.shen.widget.BatteryView;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
+import android.app.Activity;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
@@ -25,8 +24,6 @@ import android.widget.LinearLayout;
 @SuppressLint("Override")
 public class BaseActivity extends FragmentActivity {
 
-	private FragmentManager mFragmentManager = null;
-	private FragmentTransaction mFragmentTransaction = null;
 	private MainTimeFragment main_time_fragment = null;
 	private ActionBar mActionBar;
 	private Context mContext;
@@ -34,7 +31,6 @@ public class BaseActivity extends FragmentActivity {
 	private LinearLayout actionbar_left_layout, actionbar_right_layout;
 	private GeneralBroadcastReceiver mBroadcastReceiver;
 	private TelephonyManager mTelephonyManager;
-	private InCallUIFragment incalluifragment = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +38,6 @@ public class BaseActivity extends FragmentActivity {
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.base_activity_main);
 		mContext = BaseActivity.this;
-		initTelephonyListener();
 		setCustomActionBarStyle();
 		initFM();
 	}
@@ -54,9 +49,8 @@ public class BaseActivity extends FragmentActivity {
 		mBroadcastReceiver = new GeneralBroadcastReceiver(mBatteryView);
 		IntentFilter mFilter = new IntentFilter();
 		mFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
-		mFilter.addAction(Intent.ACTION_NEW_OUTGOING_CALL);
-		mFilter.addAction(GlassUtils.ACTION_PHONE_STATE_CHANGED);
 		register(mFilter);
+		initTelephonyListener();
 	}
 
 	@Override
@@ -64,6 +58,7 @@ public class BaseActivity extends FragmentActivity {
 		// TODO Auto-generated method stub
 		super.onPause();
 		unregister();
+		mTelephonyManager.listen(phoneListener, PhoneStateListener.LISTEN_NONE);
 	}
 
 	private void register(IntentFilter mFilter) {
@@ -75,8 +70,7 @@ public class BaseActivity extends FragmentActivity {
 	}
 
 	private void initFM() {
-		mFragmentManager = getSupportFragmentManager();
-		mFragmentTransaction = mFragmentManager.beginTransaction();
+		FragmentTransaction mFragmentTransaction = getSupportFragmentManager().beginTransaction();
 		if (main_time_fragment == null) {
 			main_time_fragment = new MainTimeFragment();
 			mFragmentTransaction.add(R.id.id_content, main_time_fragment);
@@ -84,11 +78,6 @@ public class BaseActivity extends FragmentActivity {
 			mFragmentTransaction.show(main_time_fragment);
 		}
 		mFragmentTransaction.commit();
-	}
-
-	@Override
-	public void onStateNotSaved() {
-		// TODO Auto-generated method stub
 	}
 
 	private void setCustomActionBarStyle() {
@@ -136,6 +125,15 @@ public class BaseActivity extends FragmentActivity {
 			initInCallFragment(state, incomingNumber);
 		}
 	};
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		if(requestCode == GlassUtils.INTENT_INCALL_UI_NUM && resultCode == Activity.RESULT_OK){
+			
+		}
+	}
 
 	private void initInCallFragment(int status, String incomingNumber) {
 
@@ -143,32 +141,23 @@ public class BaseActivity extends FragmentActivity {
 			return;
 		}
 
-		// if (!"".equals(GlassUtils.getContact(mContext, incomingNumber))) {
-		incomingNumber = GlassUtils.getContact(mContext, incomingNumber);
-		Log.i("shen", "get incomingNumber = " + incomingNumber);
-		// }
+		// incomingNumber = GlassUtils.getContact(mContext, incomingNumber);
+		// Log.i("shen", "get incomingNumber = " + incomingNumber);
 
-		if (incalluifragment == null) {
-			incalluifragment = new InCallUIFragment(mContext, status, incomingNumber);
-		}
+		Intent incallui_intent = new Intent();
+		incallui_intent.setAction(GlassUtils.ACTION_START_INCALLUI_TAG);
+		incallui_intent.putExtra(GlassUtils.INTENT_INCALL_UI_NUMBER, incomingNumber);
 
 		switch (status) {
 		case TelephonyManager.CALL_STATE_RINGING: // Incoming call
-			mActionBar.hide();
-			getSupportFragmentManager().beginTransaction().add(R.id.id_content, incalluifragment)
-					.disallowAddToBackStack().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+			startActivityForResult(incallui_intent, GlassUtils.INTENT_INCALL_UI_NUM);
 			break;
 		case TelephonyManager.CALL_STATE_OFFHOOK: // Outgoing
-			mActionBar.hide();
 			break;
 		case TelephonyManager.CALL_STATE_IDLE: // Hang up
-			mActionBar.show();
-			getSupportFragmentManager().beginTransaction().remove(incalluifragment).disallowAddToBackStack()
-					.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
 			break;
 		default:
 			break;
 		}
-
 	}
 }

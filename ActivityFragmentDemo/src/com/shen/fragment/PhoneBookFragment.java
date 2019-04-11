@@ -10,24 +10,24 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
-public class MainTimeFragment extends BaseFragment {
+public class PhoneBookFragment extends BaseFragment {
 
-	private View main_time_view = null;
-	private ImageView main_time_left_image, main_time_right_image;
+	private View phonebook_view = null;
+	private ImageView phonebook_right_btn, phonebook_left_btn;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		main_time_view = inflater.inflate(R.layout.main_time_fragment, container, false);
+		phonebook_view = inflater.inflate(R.layout.phone_book_fragment, container, false);
 		initViews();
-		return main_time_view;
+		return phonebook_view;
 	}
 
 	private void initViews() {
-		main_time_left_image = (ImageView) main_time_view.findViewById(R.id.left_direction_icons);
-		main_time_right_image = (ImageView) main_time_view.findViewById(R.id.right_direction_icons);
-		main_time_left_image.setOnClickListener(MyOnLinster);
-		main_time_right_image.setOnClickListener(MyOnLinster);
+		phonebook_right_btn = (ImageView) phonebook_view.findViewById(R.id.right_direction_icons);
+		phonebook_right_btn.setOnClickListener(MyOnLinster);
+		phonebook_left_btn = (ImageView) phonebook_view.findViewById(R.id.left_direction_icons);
+		phonebook_left_btn.setOnClickListener(MyOnLinster);
 	}
 
 	private OnClickListener MyOnLinster = new OnClickListener() {
@@ -37,10 +37,10 @@ public class MainTimeFragment extends BaseFragment {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.left_direction_icons:
-				openVoiceFragment();
+				startPhoneFragment();
 				break;
 			case R.id.right_direction_icons:
-				openNavigationFragment();
+				startCallRecordsFragment();
 				break;
 
 			default:
@@ -49,13 +49,13 @@ public class MainTimeFragment extends BaseFragment {
 		}
 	};
 
-	private void openNavigationFragment() {
+	private void startPhoneFragment() {
 		// TODO Auto-generated method stub
-		getRightTransaction(new NavigationFragment()).hide(this);
+		getLeftTransaction(new PhoneFragment()).disallowAddToBackStack().hide(this);
 	}
 
-	private void openVoiceFragment() {
+	private void startCallRecordsFragment() {
 		// TODO Auto-generated method stub
-		getLeftTransaction(new VoiceCommandFragment()).hide(this);
+		getRightTransaction(new PhoneCallRecordsFragment()).hide(this);
 	}
 }

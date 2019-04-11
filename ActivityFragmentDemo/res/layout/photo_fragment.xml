@@ -3,29 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <ImageView
+        android:id="@+id/glass_photo_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_glass_photo" />
+
     <TextView
-        android:id="@+id/photo_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/glass_photo_icon"
         android:layout_centerHorizontal="true"
-        android:text="PhotoText" />
-
-    <TextureView
-        android:id="@+id/texture"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true" />
-
-    <Button
-        android:id="@+id/picture"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="拍照" />
-
-    <include layout="@layout/direction_left_image" />
+        android:text="@string/glass_takephoto_title"
+        android:textColor="@color/glass_color_white"
+        android:textSize="42sp" />
 
     <include layout="@layout/direction_right_image" />
+
+    <include layout="@layout/direction_left_image" />
 
 </RelativeLayout>

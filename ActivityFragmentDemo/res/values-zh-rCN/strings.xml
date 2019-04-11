@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+	<string name="glass_phone_contacts_title">通讯录</string>
+	<string name="glass_navigation_title">导航</string>
+	<string name="glass_voicecommand_title">语音命令</string>
+	<string name="glass_recordvideo_title">录制</string>
+	<string name="glass_takephoto_title">拍照</string>
+	<string name="glass_callrecord_title">通话记录</string>
+	<string name="glass_dialpad_title">拨号盘</string>
 </resources>

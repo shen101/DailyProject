@@ -14,7 +14,8 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <!-- 读联系人权限 -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <!-- 写联系人权限 -->
@@ -41,10 +42,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".InCallUIActivity"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/InCallUiStyle" >
+            <intent-filter>
+                <action android:name="com.yiyang.glass.GLASS_INCALLUI_MAIN" />
 
-        <receiver
-            android:name="com.shen.broadcastreceiver.GeneralBroadcastReceiver" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PhoneDialPadMainActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/InCallUiStyle" >
+            <intent-filter>
+                <action android:name="com.yiyang.glass.GLASS_DIALPAD_MAIN" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.shen.broadcastreceiver.GeneralBroadcastReceiver" />
     </application>
 
 </manifest>

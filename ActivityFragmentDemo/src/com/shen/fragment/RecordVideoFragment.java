@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
-public class VideoFragment extends BaseFragment {
+public class RecordVideoFragment extends BaseFragment {
 
 	private View video_view = null;
 	private ImageView video_left_btn, video_right_btn;
@@ -18,7 +18,7 @@ public class VideoFragment extends BaseFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		video_view = inflater.inflate(R.layout.video_fragment, container, false);
+		video_view = inflater.inflate(R.layout.recordvideo_fragment, container, false);
 		initViews();
 		return video_view;
 	}
@@ -35,12 +35,27 @@ public class VideoFragment extends BaseFragment {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			openOneFragment();
+			switch (v.getId()) {
+			case R.id.left_direction_icons:
+				startRecordVideoFragment();
+				break;
+			case R.id.right_direction_icons:
+				startTakePhotoFragment();
+				break;
+
+			default:
+				break;
+			}
 		}
 	};
 
-	private void openOneFragment() {
+	private void startRecordVideoFragment() {
 		// TODO Auto-generated method stub
-		getRightTransaction(new PhotoFragment()).hide(this);
+		getLeftTransaction(new RecordVideoFragment()).disallowAddToBackStack().hide(this);
+	}
+
+	private void startTakePhotoFragment() {
+		// TODO Auto-generated method stub
+		getRightTransaction(new TakePhotoFragment()).hide(this);
 	}
 }
