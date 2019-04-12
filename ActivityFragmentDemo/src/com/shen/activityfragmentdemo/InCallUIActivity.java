@@ -14,13 +14,12 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Chronometer;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class InCallUIActivity extends GeneralFatherActivity implements OnClickListener {
+public class InCallUIActivity extends BaseActivity implements OnClickListener {
 
 	private TextView incomming_name;
 	private Chronometer incomming_status;
@@ -37,6 +36,7 @@ public class InCallUIActivity extends GeneralFatherActivity implements OnClickLi
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.incallui_layout);
 		mContext = InCallUIActivity.this;
+		getActionBar().hide();
 		initTelephonyListener();
 		incomming_intent = getIntent();
 		incomming_number = incomming_intent.getStringExtra(GlassUtils.INTENT_INCALL_UI_NUMBER);

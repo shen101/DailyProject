@@ -1,5 +1,8 @@
 package com.shen.utils;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.provider.ContactsContract;
@@ -17,8 +20,10 @@ public class GlassUtils {
 	public static final String ACTION_PHONE_STATE_CHANGED = "android.intent.action.PHONE_STATE";
 	public static final String ACTION_START_INCALLUI_TAG = "com.yiyang.glass.GLASS_INCALLUI_MAIN";
 	public static final String ACTION_START_DIALPAD_TAG = "com.yiyang.glass.GLASS_DIALPAD_MAIN";
+	public static final String ACTION_IS_CONNECTED_CALL_TAG = "com.yiyang.glass.ACTION_IS_CONNECTED";
 	public static final String INTENT_INCALL_UI_NUMBER = "intent_incall_ui_number";
 	public static final int INTENT_INCALL_UI_NUM = 1000;
+	public static final int DURATION = 50;
 
 	public static boolean isFastDoubleClick() {
 		long time = System.currentTimeMillis();
@@ -73,6 +78,15 @@ public class GlassUtils {
 			name = cursor.getString(nameFieldColumnIndex);
 		}
 		return name;
+	}
+
+	/**
+	 * Determine if the entered phone number is qualified
+	 */
+	public static boolean isAllowTelePhoneNumber(String inputText) {
+		Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$");
+		Matcher m = p.matcher(inputText);
+		return m.matches();
 	}
 
 }

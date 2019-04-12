@@ -30,5 +30,7 @@
     <string name="glass_hash">#</string>
     <string name="glass_dial">Dial</string>
     <string name="glass_backspace">&lt;=</string>
+    <string name="glass_number_no_null">Your number cannot be empty</string>
+    <string name="glass_number_invalid">The phone number you entered is invalid</string>
 
 </resources>
