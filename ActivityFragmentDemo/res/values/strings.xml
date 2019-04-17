@@ -4,8 +4,8 @@
     <string name="app_name">ActivityFragmentDemo</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="glass_text_format_time_24">HH:mm:ss</string>
-    <string name="glass_text_format_time_12">hh:mm:ss</string>
+    <string name="glass_text_format_time_24">HH:mm</string>
+    <string name="glass_text_format_time_12">hh:mm</string>
     <string name="glass_text_timing_24">mm:ss</string>
     <string name="glass_text_timing_12">mm:ss</string>
     <string name="glass_text_settings_label_launcher">Settings</string>
@@ -30,7 +30,7 @@
     <string name="glass_hash">#</string>
     <string name="glass_dial">Dial</string>
     <string name="glass_backspace">&lt;=</string>
-    <string name="glass_number_no_null">Your number cannot be empty</string>
+    <string name="glass_number_no_null">The dialed number cannot be empty</string>
     <string name="glass_number_invalid">The phone number you entered is invalid</string>
 
 </resources>

@@ -83,7 +83,7 @@ public class InCallUIActivity extends BaseActivity implements OnClickListener {
 		public void onCallStateChanged(int state, String incomingNumber) {
 			// TODO Auto-generated method stub
 			super.onCallStateChanged(state, incomingNumber);
-			Log.i("shen", "state = " + state + ",  incomingNumber = " + incomingNumber);
+			Log.i("shen", "state InCallUIActivity = " + state + ",  incomingNumber = " + incomingNumber);
 			initInCallFragment(state, incomingNumber);
 		}
 	};

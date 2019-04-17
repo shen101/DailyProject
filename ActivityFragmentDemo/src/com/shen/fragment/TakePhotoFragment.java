@@ -36,7 +36,7 @@ public class TakePhotoFragment extends BaseFragment {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.left_direction_icons:
-				startRecordVideoFragment();
+				onFragmentBackClick();
 				break;
 			case R.id.right_direction_icons:
 				startPhoneFragment();
@@ -51,10 +51,5 @@ public class TakePhotoFragment extends BaseFragment {
 	private void startPhoneFragment() {
 		// TODO Auto-generated method stub
 		getRightTransaction(new PhoneFragment()).hide(this);
-	}
-
-	private void startRecordVideoFragment() {
-		// TODO Auto-generated method stub
-		getLeftTransaction(new RecordVideoFragment()).disallowAddToBackStack().hide(this);
 	}
 }

@@ -37,7 +37,7 @@ public class NavigationFragment extends BaseFragment {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.left_direction_icons:
-				startMianTimeFragment();
+				onFragmentBackClick();
 				break;
 			case R.id.right_direction_icons:
 				startRecordVideoFragment();
@@ -52,9 +52,5 @@ public class NavigationFragment extends BaseFragment {
 	private void startRecordVideoFragment() {
 		// TODO Auto-generated method stub
 		getRightTransaction(new RecordVideoFragment()).hide(this);
-	}
-	private void startMianTimeFragment() {
-		// TODO Auto-generated method stub
-		getLeftTransaction(new MainTimeFragment()).disallowAddToBackStack().hide(this);
 	}
 }

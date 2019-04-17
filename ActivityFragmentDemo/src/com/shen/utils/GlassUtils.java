@@ -1,11 +1,15 @@
 package com.shen.utils;
 
+import java.lang.reflect.Method;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import com.android.internal.telephony.ITelephony;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.provider.ContactsContract;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.Surface;
@@ -21,6 +25,7 @@ public class GlassUtils {
 	public static final String ACTION_START_INCALLUI_TAG = "com.yiyang.glass.GLASS_INCALLUI_MAIN";
 	public static final String ACTION_START_DIALPAD_TAG = "com.yiyang.glass.GLASS_DIALPAD_MAIN";
 	public static final String ACTION_IS_CONNECTED_CALL_TAG = "com.yiyang.glass.ACTION_IS_CONNECTED";
+	public static final String ACTION_FRAGMENT_ONBACK_CLICK_TAG = "com.shen.BACK_ONCLICK";
 	public static final String INTENT_INCALL_UI_NUMBER = "intent_incall_ui_number";
 	public static final int INTENT_INCALL_UI_NUM = 1000;
 	public static final int DURATION = 50;
@@ -87,6 +92,21 @@ public class GlassUtils {
 		Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$");
 		Matcher m = p.matcher(inputText);
 		return m.matches();
+	}
+	
+	/**
+	 * EndPhone
+	 */
+	public static void endPhone(Context c, TelephonyManager tm) {
+		try {
+			ITelephony iTelephony;
+			Method getITelephonyMethod = TelephonyManager.class.getDeclaredMethod("getITelephony", (Class[]) null);
+			getITelephonyMethod.setAccessible(true);
+			iTelephony = (ITelephony) getITelephonyMethod.invoke(tm, (Object[]) null);
+			iTelephony.endCall();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

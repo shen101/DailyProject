@@ -3,21 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <ImageView
-        android:id="@+id/glass_navigation_icon"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/ic_glass_navigation" />
-
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/glass_navigation_icon"
         android:layout_centerHorizontal="true"
-        android:text="@string/glass_navigation_title"
-        android:textColor="@color/glass_color_white"
-        android:textSize="42sp" />
+        android:layout_centerInParent="true" >
+
+        <ImageView
+            android:id="@+id/glass_navigation_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:focusable="false"
+            android:src="@drawable/ic_glass_navigation" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/glass_navigation_icon"
+            android:layout_centerHorizontal="true"
+            android:focusable="false"
+            android:text="@string/glass_navigation_title"
+            android:textColor="@color/glass_color_white"
+            android:textSize="42sp" />
+    </RelativeLayout>
 
     <include layout="@layout/direction_right_image" />
 

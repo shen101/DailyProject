@@ -1,10 +1,6 @@
 package com.shen.activityfragmentdemo;
 
-import java.lang.reflect.Method;
-
-import com.android.internal.telephony.ITelephony;
 import com.shen.utils.GlassUtils;
-
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -76,14 +72,21 @@ public class PhoneDialPadMainActivity extends BaseActivity implements OnClickLis
 				if (isstatus) {
 					phone_status.stop();
 					phone_status.start();
-					phone_call_btn.setPressed(true);
+					updateCallBtnImage(true);
 				} else {
 					phone_status.stop();
-					phone_call_btn.setPressed(false);
+					updateCallBtnImage(false);
 				}
 			}
 		}
 	};
+
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		overridePendingTransition(R.anim.fragment_slide_right_out, R.anim.fragment_slide_right_out);
+	}
 
 	private void initViews() {
 		number_one = (Button) findViewById(R.id.one_number);
@@ -233,7 +236,7 @@ public class PhoneDialPadMainActivity extends BaseActivity implements OnClickLis
 		case R.id.glass_phone_call_btn:
 
 			if (status_text == TelephonyManager.CALL_STATE_OFFHOOK) {
-				endPhone(mContext, mTelephonyManager);
+				GlassUtils.endPhone(mContext, mTelephonyManager);
 			} else {
 				dialNumber();
 			}
@@ -250,6 +253,15 @@ public class PhoneDialPadMainActivity extends BaseActivity implements OnClickLis
 		mVibrator.vibrate(GlassUtils.DURATION);
 		KeyEvent event = new KeyEvent(KeyEvent.ACTION_DOWN, keyCode);
 		input_number.onKeyDown(keyCode, event);
+	}
+
+	private void updateCallBtnImage(boolean status) {
+		mVibrator.vibrate(GlassUtils.DURATION);
+		if (status) {
+			phone_call_btn.setBackgroundResource(R.drawable.ic_glass_hang_up);
+		} else {
+			phone_call_btn.setBackgroundResource(R.drawable.ic_glass_dial);
+		}
 	}
 
 	@Override
@@ -270,34 +282,24 @@ public class PhoneDialPadMainActivity extends BaseActivity implements OnClickLis
 		mVibrator.cancel();
 		unregisterReceiver(ringReceiver);
 	}
-
-	public static void endPhone(Context c, TelephonyManager tm) {
-		try {
-			ITelephony iTelephony;
-			Method getITelephonyMethod = TelephonyManager.class.getDeclaredMethod("getITelephony", (Class[]) null);
-			getITelephonyMethod.setAccessible(true);
-			iTelephony = (ITelephony) getITelephonyMethod.invoke(tm, (Object[]) null);
-			iTelephony.endCall();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		Log.i("shen","PhoneDialPadMainActivity onDestroy");
 	}
 
 	private void dialNumber() {
-		// if (GlassUtils.isAllowTelePhoneNumber(number)) {
 		if (number.length() > 14) {
 			Toast.makeText(mContext, R.string.glass_number_invalid, Toast.LENGTH_LONG).show();
 		} else if (number.length() > 0 && number.length() <= 14) {
 			startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number)));
 			Log.i("shen", "21212222222222222222222222");
-			phone_call_btn.setPressed(true);
+			updateCallBtnImage(true);
 		} else {
 			Toast.makeText(mContext, R.string.glass_number_no_null, Toast.LENGTH_LONG).show();
 		}
-		// }else{
-		// Toast.makeText(mContext, "you phone number is error",
-		// Toast.LENGTH_LONG).show();
-		// }
 	}
 
 	public void initTelephonyListener() {
@@ -311,7 +313,7 @@ public class PhoneDialPadMainActivity extends BaseActivity implements OnClickLis
 		public void onCallStateChanged(int state, String incomingNumber) {
 			// TODO Auto-generated method stub
 			super.onCallStateChanged(state, incomingNumber);
-			Log.i("shen", "state 1111111 = " + state + ",  incomingNumber = " + incomingNumber);
+			Log.i("shen", "state PhoneDialPadMainActivity = " + state + ",  incomingNumber = " + incomingNumber);
 			initInCallFragment(state, incomingNumber);
 		}
 	};
@@ -324,14 +326,13 @@ public class PhoneDialPadMainActivity extends BaseActivity implements OnClickLis
 		status_text = status;
 		switch (status) {
 		case TelephonyManager.CALL_STATE_RINGING: // Incoming call
-
 			break;
 		case TelephonyManager.CALL_STATE_OFFHOOK: // Outgoing
-			phone_call_btn.setPressed(true);
+			updateCallBtnImage(true);
 			phone_status.setText("calling");
 			break;
 		case TelephonyManager.CALL_STATE_IDLE: // Hang up
-			phone_call_btn.setPressed(false);
+			updateCallBtnImage(false);
 			phone_status.setText("");
 			phone_status.stop();
 			break;

@@ -14,6 +14,7 @@
             android:id="@+id/glass_phone_dialpad_icon"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
             android:focusable="false"
             android:src="@drawable/ic_glass_dialpad" />
 

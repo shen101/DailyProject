@@ -37,7 +37,7 @@ public class PhoneBookFragment extends BaseFragment {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.left_direction_icons:
-				startPhoneFragment();
+				onFragmentBackClick();
 				break;
 			case R.id.right_direction_icons:
 				startCallRecordsFragment();
@@ -48,11 +48,6 @@ public class PhoneBookFragment extends BaseFragment {
 			}
 		}
 	};
-
-	private void startPhoneFragment() {
-		// TODO Auto-generated method stub
-		getLeftTransaction(new PhoneFragment()).disallowAddToBackStack().hide(this);
-	}
 
 	private void startCallRecordsFragment() {
 		// TODO Auto-generated method stub

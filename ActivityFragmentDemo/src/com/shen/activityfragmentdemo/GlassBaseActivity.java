@@ -2,21 +2,18 @@ package com.shen.activityfragmentdemo;
 
 import com.shen.broadcastreceiver.GeneralBroadcastReceiver;
 import com.shen.fragment.MainTimeFragment;
+import com.shen.service.MonitorPhoneStatusServer;
 import com.shen.utils.GlassUtils;
 import com.shen.widget.BatteryView;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
-import android.app.Activity;
-import android.app.Service;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.telephony.PhoneStateListener;
-import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -28,9 +25,8 @@ public class GlassBaseActivity extends FragmentActivity {
 	private ActionBar mActionBar;
 	private Context mContext;
 	private BatteryView mBatteryView;
-	private LinearLayout actionbar_left_layout, actionbar_right_layout;
+	private LinearLayout actionbar_left_layout, actionbar_right_layout, naim_layout;
 	private GeneralBroadcastReceiver mBroadcastReceiver;
-	private TelephonyManager mTelephonyManager;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +36,7 @@ public class GlassBaseActivity extends FragmentActivity {
 		mContext = GlassBaseActivity.this;
 		setCustomActionBarStyle();
 		initFM();
+		initPhoneService(true);
 	}
 
 	@Override
@@ -50,15 +47,35 @@ public class GlassBaseActivity extends FragmentActivity {
 		IntentFilter mFilter = new IntentFilter();
 		mFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
 		register(mFilter);
-		initTelephonyListener();
+		
+		IntentFilter back_Filter = new IntentFilter();
+		back_Filter.addAction("com.shen.BACK_ONCLICK");
+		registerReceiver(back_Receiver, back_Filter);
 	}
+	
+	private BroadcastReceiver back_Receiver = new BroadcastReceiver() {
+		
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			// TODO Auto-generated method stub
+			if("com.shen.BACK_ONCLICK".equals(intent.getAction())){
+				onBackPressed();				
+			}
+		}
+	};
 
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
 		unregister();
-		mTelephonyManager.listen(phoneListener, PhoneStateListener.LISTEN_NONE);
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		initPhoneService(false);
 	}
 
 	private void register(IntentFilter mFilter) {
@@ -110,54 +127,19 @@ public class GlassBaseActivity extends FragmentActivity {
 		return super.dispatchTouchEvent(event);
 	}
 
-	public void initTelephonyListener() {
-		mTelephonyManager = (TelephonyManager) getSystemService(Service.TELEPHONY_SERVICE);
-		mTelephonyManager.listen(phoneListener, PhoneStateListener.LISTEN_CALL_STATE);
-	}
-
-	private PhoneStateListener phoneListener = new PhoneStateListener() {
-
-		@Override
-		public void onCallStateChanged(int state, String incomingNumber) {
-			// TODO Auto-generated method stub
-			super.onCallStateChanged(state, incomingNumber);
-			Log.i("shen", "state = " + state + ",  incomingNumber = " + incomingNumber);
-			initInCallFragment(state, incomingNumber);
+	private void initPhoneService(boolean mstatus) {
+		Intent phone_service = new Intent();
+		phone_service.setClass(GlassBaseActivity.this, MonitorPhoneStatusServer.class);
+		if (mstatus) {
+			startService(phone_service);
+		} else {
+			stopService(phone_service);
 		}
-	};
+	}
 	
 	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	public void onBackPressed() {
 		// TODO Auto-generated method stub
-		super.onActivityResult(requestCode, resultCode, data);
-		if(requestCode == GlassUtils.INTENT_INCALL_UI_NUM && resultCode == Activity.RESULT_OK){
-			
-		}
-	}
-
-	private void initInCallFragment(int status, String incomingNumber) {
-
-		if ("".equals(incomingNumber)) {
-			return;
-		}
-
-		// incomingNumber = GlassUtils.getContact(mContext, incomingNumber);
-		// Log.i("shen", "get incomingNumber = " + incomingNumber);
-
-		Intent incallui_intent = new Intent();
-		incallui_intent.setAction(GlassUtils.ACTION_START_INCALLUI_TAG);
-		incallui_intent.putExtra(GlassUtils.INTENT_INCALL_UI_NUMBER, incomingNumber);
-
-		switch (status) {
-		case TelephonyManager.CALL_STATE_RINGING: // Incoming call
-			startActivityForResult(incallui_intent, GlassUtils.INTENT_INCALL_UI_NUM);
-			break;
-		case TelephonyManager.CALL_STATE_OFFHOOK: // Outgoing
-			break;
-		case TelephonyManager.CALL_STATE_IDLE: // Hang up
-			break;
-		default:
-			break;
-		}
+		super.onBackPressed();
 	}
 }

@@ -1,6 +1,9 @@
 package com.shen.activityfragmentdemo;
 
+import com.shen.utils.GlassUtils;
+
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -27,7 +30,7 @@ public class BaseFragment extends Fragment {
 				R.anim.fragment_slide_left_in, R.anim.fragment_slide_right_out);
 		mTransaction.add(R.id.id_content, mFragment);
 		mTransaction.addToBackStack(null);
-		mTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE); 
+		mTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 		mTransaction.commit();
 		return mTransaction;
 	}
@@ -38,9 +41,15 @@ public class BaseFragment extends Fragment {
 		mTransaction.setCustomAnimations(R.anim.fragment_slide_left_in, R.anim.fragment_slide_right_out,
 				R.anim.fragment_slide_right_in, R.anim.fragment_slide_left_out);
 		mTransaction.add(R.id.id_content, mFragment);
-//		mTransaction.addToBackStack(null);
+		mTransaction.addToBackStack(null);
+		mTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 		mTransaction.commit();
 		return mTransaction;
+	}
+	
+	public void onFragmentBackClick(){
+		Intent back_intent = new Intent(GlassUtils.ACTION_FRAGMENT_ONBACK_CLICK_TAG);
+		getActivity().sendBroadcast(back_intent);
 	}
 
 }

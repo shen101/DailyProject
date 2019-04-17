@@ -41,7 +41,7 @@ public class PhoneDialPadFragment extends BaseFragment {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.left_direction_icons:
-				PhoneCallRecordsFragment();
+				onFragmentBackClick();
 				break;
 			case R.id.glass_phone_dialpad_onclick:
 				startPhoneDialPadMain();
@@ -51,11 +51,6 @@ public class PhoneDialPadFragment extends BaseFragment {
 			}
 		}
 	};
-
-	private void PhoneCallRecordsFragment() {
-		// TODO Auto-generated method stub
-		getLeftTransaction(new PhoneCallRecordsFragment()).hide(this);
-	}
 
 	private void startPhoneDialPadMain() {
 		// TODO Auto-generated method stub

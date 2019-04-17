@@ -24,7 +24,6 @@ public class PhoneFragment extends BaseFragment {
 		initViews();
 		return phone_view;
 	}
-	
 
 	private void initViews() {
 		phone_left_btn = (ImageView) phone_view.findViewById(R.id.left_direction_icons);
@@ -42,7 +41,7 @@ public class PhoneFragment extends BaseFragment {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.left_direction_icons:
-				
+				onFragmentBackClick();
 				break;
 			case R.id.right_direction_icons:
 				startMusicFragment();
@@ -60,6 +59,7 @@ public class PhoneFragment extends BaseFragment {
 		// TODO Auto-generated method stub
 		getRightTransaction(new MusicFragment()).hide(this);
 	}
+
 	private void startPhoneInfosFragment() {
 		// TODO Auto-generated method stub
 		getRightTransaction(new PhoneBookFragment()).hide(this);

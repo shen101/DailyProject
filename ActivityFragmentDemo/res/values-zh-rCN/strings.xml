@@ -7,6 +7,6 @@
 	<string name="glass_takephoto_title">拍照</string>
 	<string name="glass_callrecord_title">通话记录</string>
 	<string name="glass_dialpad_title">拨号盘</string>
-	<string name="glass_number_no_null">您的号码不能为空</string>
+	<string name="glass_number_no_null">拨出的号码不能为空</string>
 	<string name="glass_number_invalid">您输入的电话号码无效</string>
 </resources>

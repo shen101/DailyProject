@@ -20,4 +20,12 @@
 
     <style name="InCallUiStyle" parent="@style/CustomActionBarStyle" />
 
+    <style name="GlassDialPadMainActivity" parent="@style/InCallUiStyle">
+      	<item name="android:windowAnimationStyle">@style/ActivityAnimationStyle</item>
+    </style>
+
+    <style name="ActivityAnimationStyle" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fragment_slide_right_in</item>
+    </style>
+
 </resources>

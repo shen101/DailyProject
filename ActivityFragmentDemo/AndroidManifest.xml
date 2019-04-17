@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -25,12 +26,11 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <!-- 读短信权限 -->
     <uses-permission android:name="android.permission.READ_SMS" />
-    
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <protected-broadcast android:name="android.intent.action.SIM_STATE_CHANGED" />
     <protected-broadcast android:name="android.provider.Telephony.SPN_STRINGS_UPDATED" />
-    
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_glass_launcher"
@@ -44,7 +44,11 @@
             android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.MONKEY" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
@@ -55,22 +59,25 @@
             android:theme="@style/InCallUiStyle" >
             <intent-filter>
                 <action android:name="com.yiyang.glass.GLASS_INCALLUI_MAIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".PhoneDialPadMainActivity"
-            android:noHistory="true"
             android:process="com.android.phone"
             android:screenOrientation="landscape"
-            android:theme="@style/InCallUiStyle" >
+            android:theme="@style/GlassDialPadMainActivity" >
             <intent-filter>
                 <action android:name="com.yiyang.glass.GLASS_DIALPAD_MAIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <receiver android:name="com.shen.broadcastreceiver.GeneralBroadcastReceiver" />
+
+        <service android:name="com.shen.service.MonitorPhoneStatusServer" />
     </application>
 
 </manifest>

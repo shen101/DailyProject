@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="1" />
+        android:layout_weight="0.8" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -89,7 +89,9 @@
                     android:id="@+id/one_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
                     android:background="@color/glass_color_black"
+                    android:gravity="center_horizontal|bottom"
                     android:text="@string/glass_one"
                     android:textColor="@color/glass_color_white"
                     android:textSize="38sp" />
@@ -435,7 +437,7 @@
             android:id="@+id/glass_phone_call_btn"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_gravity="center"
+            android:layout_gravity="left|center_vertical"
             android:background="@drawable/glass_incall_btn_selector" />
     </LinearLayout>
 
