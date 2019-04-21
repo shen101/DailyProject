@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="glass_phone_contacts_title">通讯录</string>
-	<string name="glass_navigation_title">导航</string>
-	<string name="glass_voicecommand_title">语音命令</string>
-	<string name="glass_recordvideo_title">录制</string>
-	<string name="glass_takephoto_title">拍照</string>
-	<string name="glass_callrecord_title">通话记录</string>
-	<string name="glass_dialpad_title">拨号盘</string>
-	<string name="glass_number_no_null">拨出的号码不能为空</string>
-	<string name="glass_number_invalid">您输入的电话号码无效</string>
+
+    <string name="glass_phone_contacts_title">通讯录</string>
+    <string name="glass_navigation_title">导航</string>
+    <string name="glass_voicecommand_title">语音命令</string>
+    <string name="glass_recordvideo_title">录制</string>
+    <string name="glass_takephoto_title">拍照</string>
+    <string name="glass_callrecord_title">通话记录</string>
+    <string name="glass_dialpad_title">拨号盘</string>
+    <string name="glass_number_no_null">拨出的号码不能为空</string>
+    <string name="glass_number_invalid">您输入的电话号码无效</string>
+    <string name="glass_imei_identifier">移动通信国际识别码</string>
+    <string name="glass_music_title">音乐</string>
+    <string name="glass_settings_title">设置</string>
+    <string name="glass_pearview_title">预览</string>
+    <string name="glass_wlan_title">无线网络</string>
+    <string name="glass_language_title">语言</string>
+    <string name="glass_current_language_title">当前语言</string>
+    <string name="glass_turn_on_title">打开</string>
+    <string name="glass_shut_down_title">关闭</string>
+    <string name="glass_wifi_starting">正在打开Wifi…</string>
+    <string name="glass_wifi_stopping">正在关闭Wifi…</string>
+
 </resources>

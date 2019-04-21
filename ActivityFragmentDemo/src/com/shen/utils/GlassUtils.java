@@ -1,15 +1,21 @@
 package com.shen.utils;
 
 import java.lang.reflect.Method;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.android.internal.telephony.ITelephony;
 
+import android.app.backup.BackupManager;
 import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.provider.ContactsContract;
+import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.Surface;
@@ -27,6 +33,7 @@ public class GlassUtils {
 	public static final String ACTION_IS_CONNECTED_CALL_TAG = "com.yiyang.glass.ACTION_IS_CONNECTED";
 	public static final String ACTION_FRAGMENT_ONBACK_CLICK_TAG = "com.shen.BACK_ONCLICK";
 	public static final String INTENT_INCALL_UI_NUMBER = "intent_incall_ui_number";
+	public static final String MMI_IMEI_DISPLAY = "*#06#";
 	public static final int INTENT_INCALL_UI_NUM = 1000;
 	public static final int DURATION = 50;
 
@@ -34,7 +41,7 @@ public class GlassUtils {
 		long time = System.currentTimeMillis();
 		long timeD = time - lastClickTime;
 		Log.i(TAG, "timeD = " + timeD);
-		if (0 < timeD && timeD < 245) {
+		if (0 < timeD && timeD < 400) {
 			return true;
 		}
 		lastClickTime = time;
@@ -93,7 +100,7 @@ public class GlassUtils {
 		Matcher m = p.matcher(inputText);
 		return m.matches();
 	}
-	
+
 	/**
 	 * EndPhone
 	 */
@@ -104,6 +111,45 @@ public class GlassUtils {
 			getITelephonyMethod.setAccessible(true);
 			iTelephony = (ITelephony) getITelephonyMethod.invoke(tm, (Object[]) null);
 			iTelephony.endCall();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * set current language
+	 */
+	public static void setCurrentLanguage(Locale locale) {
+		try {
+			Object objIActMag, objActMagNative;
+
+			Class clzIActMag = Class.forName("android.app.IActivityManager");
+
+			Class clzActMagNative = Class.forName("android.app.ActivityManagerNative");
+
+			Method mtdActMagNative$getDefault = clzActMagNative.getDeclaredMethod("getDefault");
+
+			objIActMag = mtdActMagNative$getDefault.invoke(clzActMagNative);
+
+			Method mtdIActMag$getConfiguration = clzIActMag.getDeclaredMethod("getConfiguration");
+
+			Configuration config = (Configuration) mtdIActMag$getConfiguration.invoke(objIActMag);
+
+			config.locale = locale;
+
+			Class clzConfig = Class.forName("android.content.res.Configuration");
+			java.lang.reflect.Field userSetLocale = clzConfig.getField("userSetLocale");
+			userSetLocale.set(config, true);
+
+			// 此处需要声明权限:android.permission.CHANGE_CONFIGURATION
+			// 会重新调用 onCreate();
+			Class[] clzParams = { Configuration.class };
+
+			Method mtdIActMag$updateConfiguration = clzIActMag.getDeclaredMethod("updateConfiguration", clzParams);
+
+			mtdIActMag$updateConfiguration.invoke(objIActMag, config);
+
+			BackupManager.dataChanged("com.android.providers.settings");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

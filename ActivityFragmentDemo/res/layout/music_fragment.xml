@@ -3,18 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/music_txt"
+    <RelativeLayout
+        android:id="@+id/glass_music_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="MusicText" />
+        android:layout_centerInParent="true" >
 
-    <Button
-        android:id="@+id/music_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="MusicBtn" />
+        <ImageView
+            android:id="@+id/glass_music_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:focusable="false"
+            android:src="@drawable/ic_glass_music" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/glass_music_icon"
+            android:layout_centerHorizontal="true"
+            android:focusable="false"
+            android:text="@string/glass_music_title"
+            android:textColor="@color/glass_color_white"
+            android:textSize="42sp" />
+    </RelativeLayout>
+
+    <include layout="@layout/direction_right_image" />
+
+    <include layout="@layout/direction_left_image" />
 
 </RelativeLayout>

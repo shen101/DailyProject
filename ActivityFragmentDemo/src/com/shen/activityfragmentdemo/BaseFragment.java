@@ -51,5 +51,4 @@ public class BaseFragment extends Fragment {
 		Intent back_intent = new Intent(GlassUtils.ACTION_FRAGMENT_ONBACK_CLICK_TAG);
 		getActivity().sendBroadcast(back_intent);
 	}
-
 }

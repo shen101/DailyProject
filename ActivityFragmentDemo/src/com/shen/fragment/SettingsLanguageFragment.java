@@ -11,27 +11,27 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-public class MusicFragment extends BaseFragment {
+public class SettingsLanguageFragment extends BaseFragment {
 
-	private View music_view = null;
-	private ImageView music_left_btn, music_right_btn;
-	private RelativeLayout music_layout;
+	private View language_view = null;
+	private ImageView language_left_btn, language_right_btn;
+	private RelativeLayout language_layout;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		music_view = inflater.inflate(R.layout.music_fragment, container, false);
+		language_view = inflater.inflate(R.layout.settings_language_fragment, container, false);
 		initViews();
-		return music_view;
+		return language_view;
 	}
 
 	private void initViews() {
-		music_left_btn = (ImageView) music_view.findViewById(R.id.left_direction_icons);
-		music_left_btn.setOnClickListener(MyOnLinster);
-		music_right_btn = (ImageView) music_view.findViewById(R.id.right_direction_icons);
-		music_right_btn.setOnClickListener(MyOnLinster);
-		music_layout = (RelativeLayout) music_view.findViewById(R.id.glass_music_layout);
-		music_layout.setOnClickListener(MyOnLinster);
+		language_left_btn = (ImageView) language_view.findViewById(R.id.left_direction_icons);
+		language_left_btn.setOnClickListener(MyOnLinster);
+		language_right_btn = (ImageView) language_view.findViewById(R.id.right_direction_icons);
+		language_right_btn.setOnClickListener(MyOnLinster);
+		language_layout = (RelativeLayout) language_view.findViewById(R.id.glass_language_layout);
+		language_layout.setOnClickListener(MyOnLinster);
 	}
 
 	private OnClickListener MyOnLinster = new OnClickListener() {
@@ -44,10 +44,10 @@ public class MusicFragment extends BaseFragment {
 				onFragmentBackClick();
 				break;
 			case R.id.right_direction_icons:
-				startPearViewFragment();
-				break;
-			case R.id.glass_music_layout:
 
+				break;
+			case R.id.glass_language_layout:
+				startLanguageInfoFragment();
 				break;
 			default:
 				break;
@@ -55,9 +55,8 @@ public class MusicFragment extends BaseFragment {
 		}
 	};
 
-	private void startPearViewFragment() {
+	private void startLanguageInfoFragment() {
 		// TODO Auto-generated method stub
-		getRightTransaction(new PearViewFragment()).hide(this);
+		getRightTransaction(new SettingsLanguageInfoFragment()).hide(this);
 	}
-
 }

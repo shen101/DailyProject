@@ -32,5 +32,14 @@
     <string name="glass_backspace">&lt;=</string>
     <string name="glass_number_no_null">The dialed number cannot be empty</string>
     <string name="glass_number_invalid">The phone number you entered is invalid</string>
+    <string name="glass_imei_identifier">IMEI</string>
+    <string name="glass_music_title">Music</string>
+    <string name="glass_settings_title">Settings</string>
+    <string name="glass_pearview_title">Preview</string>
+    <string name="glass_wlan_title">Wireless Network</string>
+    <string name="glass_turn_on_title">Turn On</string>
+    <string name="glass_shut_down_title">Shut Down</string>
+    <string name="glass_language_title">Language</string>
+    <string name="glass_current_language_title">Current language</string>
 
 </resources>

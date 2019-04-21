@@ -4,7 +4,6 @@ import com.shen.activityfragmentdemo.BaseFragment;
 import com.shen.activityfragmentdemo.R;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

@@ -1,6 +1,8 @@
 package com.shen.activityfragmentdemo;
 
 import com.shen.utils.GlassUtils;
+
+import android.app.AlertDialog;
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -177,8 +179,25 @@ public class PhoneDialPadMainActivity extends BaseActivity implements OnClickLis
 		@Override
 		public void afterTextChanged(Editable s) {
 			// TODO Auto-generated method stub
+			Log.i("shen", "afterTextChanged s = " + s);
+			buildDialog(s.toString());
 		}
 	};
+
+	private void buildDialog(String input) {
+		if (GlassUtils.MMI_IMEI_DISPLAY.equals(input.toString().trim())) {
+			AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+			builder.setTitle(R.string.glass_imei_identifier);
+			builder.setMessage(getIMEI());
+			builder.setPositiveButton(android.R.string.cancel, null);
+			builder.show();
+		}
+	}
+
+	private String getIMEI() {
+		TelephonyManager mTelephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+		return mTelephonyManager.getDeviceId();
+	}
 
 	@Override
 	public void onClick(View v) {

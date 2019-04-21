@@ -4,14 +4,14 @@
     android:layout_height="match_parent" >
 
     <RelativeLayout
-        android:id="@+id/glass_pearview_layout"
+        android:id="@+id/glass_wlan_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true" >
 
         <ImageView
-            android:id="@+id/glass_pearview_icon"
+            android:id="@+id/glass_wlan_icon"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_centerHorizontal="true"
@@ -21,10 +21,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/glass_pearview_icon"
+            android:layout_below="@id/glass_wlan_icon"
             android:layout_centerHorizontal="true"
             android:focusable="false"
-            android:text="@string/glass_pearview_title"
+            android:text="@string/glass_wlan_title"
             android:textColor="@color/glass_color_white"
             android:textSize="42sp" />
     </RelativeLayout>
