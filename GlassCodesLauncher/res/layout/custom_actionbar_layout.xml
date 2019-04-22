@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/glass_color_black"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/actionbar_left_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="left|center_vertical"
+        android:orientation="horizontal" >
+
+        <TextClock
+            android:id="@+id/actionbar_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:format12Hour="@string/glass_text_format_time_12"
+            android:format24Hour="@string/glass_text_format_time_24"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:textColor="@color/glass_color_white"
+            android:textSize="30dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/actionbar_right_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal" >
+
+        <com.shen.widget.BatteryView
+            android:id="@+id/actionbar_battery_view"
+            android:layout_width="50dp"
+            android:layout_height="20dp" />
+    </LinearLayout>
+
+</LinearLayout>

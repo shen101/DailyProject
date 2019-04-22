@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/glass_wlan_on_off_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="100dp"
+                android:text="@string/glass_turn_on_title"
+                android:textColor="@color/glass_color_white"
+                android:textSize="20sp" />
+
+            <Switch
+                android:id="@+id/glass_wlan_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="80dp"
+                android:layout_marginTop="100dp"
+                android:thumb="@drawable/glass_switch_thumb"
+                android:track="@drawable/glass_switch_track_selector" />
+
+            <TextView
+                android:id="@+id/glass_wlan_connecting_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/glass_wlan_on_off_txt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:gravity="center_horizontal"
+                android:text="@string/glass_wlan_disconnect_info"
+                android:textColor="@color/glass_color_white"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="right" >
+
+            <com.shen.widget.HorizontalListView
+                android:id="@+id/wlan_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:divider="#000000"
+                android:dividerHeight="2px"
+                android:orientation="horizontal" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include layout="@layout/direction_left_image" />
+
+</RelativeLayout>

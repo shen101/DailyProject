@@ -1,0 +1,31 @@
+<resources>
+
+    <style name="GlassLauncherMainStyle" parent="@android:ThemeOverlay.Material.Dark.ActionBar">
+        <item name="android:colorAccent">@color/glass_color_black</item>
+        <item name="android:colorBackground">@color/glass_color_black</item>
+        <item name="android:colorPrimary">@color/glass_color_black</item>
+        <item name="android:colorPrimaryDark">@color/glass_color_black</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/glass_color_black</item>
+        <item name="android:actionBarSize">@dimen/glass_dimen_actionbar_hight_size</item>
+        <item name="android:actionBarStyle">@style/CustomActionBarStyle</item>
+    </style>
+
+    <style name="CustomActionBarStyle" parent="@android:style/Widget.Material.ActionBar">
+        <item name="android:contentInsetStart">@dimen/glass_dimen_0_size</item>
+        <item name="android:contentInsetEnd">@dimen/glass_dimen_0_size</item>
+        <item name="android:contentInsetLeft">@dimen/glass_dimen_0_size</item>
+        <item name="android:contentInsetRight">@dimen/glass_dimen_0_size</item>
+    </style>
+
+    <style name="InCallUiStyle" parent="@style/CustomActionBarStyle" />
+
+    <style name="GlassDialPadMainActivity" parent="@style/InCallUiStyle">
+      	<item name="android:windowAnimationStyle">@style/ActivityAnimationStyle</item>
+    </style>
+
+    <style name="ActivityAnimationStyle" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fragment_slide_right_in</item>
+    </style>
+
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/glass_language_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true" >
+
+        <ImageView
+            android:id="@+id/glass_langugae_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:focusable="false"
+            android:src="@drawable/ic_glass_rearview" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/glass_langugae_icon"
+            android:layout_centerHorizontal="true"
+            android:focusable="false"
+            android:text="@string/glass_language_title"
+            android:textColor="@color/glass_color_white"
+            android:textSize="42sp" />
+    </RelativeLayout>
+
+    <include layout="@layout/direction_right_image" />
+
+    <include layout="@layout/direction_left_image" />
+
+</RelativeLayout>
