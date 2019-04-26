@@ -7,4 +7,6 @@
     <color name="glass_color_black">@android:color/black</color>
     <color name="glass_color_white">@android:color/white</color>
     <color name="glass_color_next_icons">#929292</color>
+    <color name="glass_switch_on_background_color">#52D568</color>
+    <color name="glass_switch_off_background_color">#CDCDCD</color>
 </resources>

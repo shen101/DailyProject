@@ -131,7 +131,7 @@
                     android:layout_below="@id/two_number"
                     android:layout_centerHorizontal="true"
                     android:gravity="center_horizontal"
-                    android:text="ABC"
+                    android:text="@string/wifi_letter_abc"
                     android:textSize="12sp" />
             </RelativeLayout>
 
@@ -160,7 +160,7 @@
                     android:layout_below="@id/three_number"
                     android:layout_centerHorizontal="true"
                     android:gravity="center_horizontal"
-                    android:text="DEF"
+                    android:text="@string/wifi_letter_def"
                     android:textSize="12sp" />
             </RelativeLayout>
         </LinearLayout>
@@ -196,7 +196,7 @@
                     android:layout_below="@id/four_number"
                     android:layout_centerHorizontal="true"
                     android:gravity="center_horizontal"
-                    android:text="GHI"
+                    android:text="@string/wifi_letter_ghi"
                     android:textSize="12sp" />
             </RelativeLayout>
 
@@ -225,7 +225,7 @@
                     android:layout_below="@id/five_number"
                     android:layout_centerHorizontal="true"
                     android:gravity="center_horizontal"
-                    android:text="JKL"
+                    android:text="@string/wifi_letter_jkl"
                     android:textSize="12sp" />
             </RelativeLayout>
 
@@ -254,7 +254,7 @@
                     android:layout_below="@id/six_number"
                     android:layout_centerHorizontal="true"
                     android:gravity="center_horizontal"
-                    android:text="MNO"
+                    android:text="@string/wifi_letter_mno"
                     android:textSize="12sp" />
             </RelativeLayout>
         </LinearLayout>
@@ -290,7 +290,7 @@
                     android:layout_below="@id/seven_number"
                     android:layout_centerHorizontal="true"
                     android:gravity="center_horizontal"
-                    android:text="PQRS"
+                    android:text="@string/wifi_letter_pqrs"
                     android:textSize="12sp" />
             </RelativeLayout>
 
@@ -319,7 +319,7 @@
                     android:layout_below="@id/eight_number"
                     android:layout_centerHorizontal="true"
                     android:gravity="center_horizontal"
-                    android:text="TUV"
+                    android:text="@string/wifi_letter_tuv"
                     android:textSize="12sp" />
             </RelativeLayout>
 
@@ -347,7 +347,7 @@
                     android:layout_below="@id/nine_number"
                     android:layout_centerHorizontal="true"
                     android:gravity="center_horizontal"
-                    android:text="WXYZ"
+                    android:text="@string/wifi_letter_wxyz"
                     android:textSize="12sp" />
             </RelativeLayout>
         </LinearLayout>
@@ -402,7 +402,7 @@
                     android:layout_below="@id/zero_number"
                     android:layout_centerHorizontal="true"
                     android:gravity="center_horizontal"
-                    android:text="+"
+                    android:text="@string/wifi_letter_add"
                     android:textSize="12sp" />
             </RelativeLayout>
 

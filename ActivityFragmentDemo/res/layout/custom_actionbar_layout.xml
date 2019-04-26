@@ -33,6 +33,34 @@
         android:gravity="right|center_vertical"
         android:orientation="horizontal" >
 
+        <ImageView
+            android:id="@+id/gps_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_glass_gps_signal_0" />
+
+        <ImageView
+            android:id="@+id/mobile_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_glass_mobile_signal_0" />
+
+        <ImageView
+            android:id="@+id/bluetooth_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_glass_bluetooth" />
+
+        <ImageView
+            android:id="@+id/wifi_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_glass_wifi_signal_0" />
+
         <com.shen.widget.BatteryView
             android:id="@+id/actionbar_battery_view"
             android:layout_width="50dp"

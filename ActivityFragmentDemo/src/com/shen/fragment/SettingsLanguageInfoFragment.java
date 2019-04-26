@@ -7,8 +7,11 @@ import com.shen.activityfragmentdemo.R;
 import com.shen.adapter.GlassLanguageListAdapter;
 import com.shen.utils.GlassLanguageInfo;
 import com.shen.utils.GlassUtils;
-
+import com.android.internal.app.LocalePicker;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +22,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 
-public class SettingsLanguageInfoFragment extends BaseFragment {
+public class SettingsLanguageInfoFragment extends BaseFragment
+		implements com.android.internal.app.LocalePicker.LocaleSelectionListener {
 
 	private View language_view = null;
 	private ImageView language_info_left_btn;
@@ -27,6 +31,9 @@ public class SettingsLanguageInfoFragment extends BaseFragment {
 	private ListView language_list;
 	private ArrayList<GlassLanguageInfo> language_infos = null;
 	private GlassLanguageListAdapter mAdapter;
+	private LocalePicker mPicker;
+	private Locale selected_locale = null;
+	private Handler mhandler = new Handler(Looper.getMainLooper());
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -70,20 +77,21 @@ public class SettingsLanguageInfoFragment extends BaseFragment {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 			// TODO Auto-generated method stub
-			updateLanguage(Locale.forLanguageTag(language_infos.get(position).getLanguage_codes()));
-			updateCurrentLanguage();
+			Log.i("shen", "position = "+position);
+			selected_locale = Locale.forLanguageTag(language_infos.get(position).getLanguage_codes());
+			mhandler.post(new updateLocaleRunnable());
 		}
 	};
+	
+	class updateLocaleRunnable implements Runnable{
 
-	public void updateLanguage(final Locale info) {
-		new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				GlassUtils.setCurrentLanguage(info);
-			}
-		});
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			onLocaleSelected(selected_locale);
+			updateCurrentLanguage();
+		}
+		
 	}
 
 	private OnClickListener MyOnLinster = new OnClickListener() {
@@ -94,4 +102,10 @@ public class SettingsLanguageInfoFragment extends BaseFragment {
 			onFragmentBackClick();
 		}
 	};
+
+	@Override
+	public void onLocaleSelected(final Locale locale) {
+		getActivity().onBackPressed();
+		LocalePicker.updateLocale(locale);
+	}
 }

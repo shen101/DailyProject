@@ -20,7 +20,6 @@
             android:format12Hour="@string/glass_text_timing_12"
             android:format24Hour="@string/glass_text_timing_24"
             android:gravity="center_horizontal"
-            android:text="00:00"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
 
@@ -30,7 +29,6 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/glass_incallui_phone_status"
             android:gravity="center_horizontal"
-            android:text="亲爱的狗蛋蛋"
             android:textColor="@android:color/white"
             android:textSize="25sp" />
     </RelativeLayout>

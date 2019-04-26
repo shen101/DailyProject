@@ -41,5 +41,25 @@
     <string name="glass_shut_down_title">Shut Down</string>
     <string name="glass_language_title">Language</string>
     <string name="glass_current_language_title">Current language</string>
+    <string name="glass_wlan_connected_info">Connected to:\n%1$s</string>
+    <string name="glass_wlan_disconnect_info">No network connected</string>
+    <string name="wifi_signal_strength">Signal strength:</string>
+    <string name="wifi_safety">Safety:</string>
+    <string name="wifi_info">Info:</string>
+    <string name="wifi_signal_level_very_strong">Very Strong</string>
+    <string name="wifi_signal_level_strong">Strong</string>
+    <string name="wifi_signal_level_general">General</string>
+    <string name="wifi_signal_level_very_weak">Very Weak</string>
+    <string name="wifi_signal_level_null">UnKnown</string>
+    <string name="wifi_letter_abc">ABC</string>
+    <string name="wifi_letter_def">DEF</string>
+    <string name="wifi_letter_ghi">GHI</string>
+    <string name="wifi_letter_jkl">JKL</string>
+    <string name="wifi_letter_mno">MNO</string>
+    <string name="wifi_letter_pqrs">PQRS</string>
+    <string name="wifi_letter_tuv">TUV</string>
+    <string name="wifi_letter_wxyz">WXYZ</string>
+    <string name="wifi_letter_add">+</string>
+    <string name="glass_save_failed">Saving photo failed</string>
 
 </resources>
