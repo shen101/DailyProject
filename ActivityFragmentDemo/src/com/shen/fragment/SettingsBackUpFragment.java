@@ -10,27 +10,31 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
-public class SettingsLanguageFragment extends BaseFragment {
+public class SettingsBackUpFragment extends BaseFragment {
 
-	private View language_view = null;
-	private ImageView language_left_btn, language_right_btn;
+	private View backup_view = null;
+	private ImageView backup_left_btn, backup_right_btn;
+	private TextView backup_title;
 	private RelativeLayout language_layout;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		language_view = inflater.inflate(R.layout.settings_language_fragment, container, false);
+		backup_view = inflater.inflate(R.layout.settings_language_fragment, container, false);
 		initViews();
-		return language_view;
+		return backup_view;
 	}
 
 	private void initViews() {
-		language_left_btn = (ImageView) language_view.findViewById(R.id.left_direction_icons);
-		language_left_btn.setOnClickListener(MyOnLinster);
-		language_right_btn = (ImageView) language_view.findViewById(R.id.right_direction_icons);
-		language_right_btn.setOnClickListener(MyOnLinster);
-		language_layout = (RelativeLayout) language_view.findViewById(R.id.glass_language_layout);
+		backup_left_btn = (ImageView) backup_view.findViewById(R.id.left_direction_icons);
+		backup_left_btn.setOnClickListener(MyOnLinster);
+		backup_right_btn = (ImageView) backup_view.findViewById(R.id.right_direction_icons);
+		backup_right_btn.setOnClickListener(MyOnLinster);
+		backup_title = (TextView) backup_view.findViewById(R.id.glass_language_text);
+		backup_title.setText(R.string.glass_backup_title);
+		language_layout = (RelativeLayout) backup_view.findViewById(R.id.glass_language_layout);
 		language_layout.setOnClickListener(MyOnLinster);
 	}
 
@@ -44,10 +48,10 @@ public class SettingsLanguageFragment extends BaseFragment {
 				onFragmentBackClick();
 				break;
 			case R.id.right_direction_icons:
-				startBackUpFragment();
+
 				break;
 			case R.id.glass_language_layout:
-				startLanguageInfoFragment();
+				startBackUpInfoFragment();
 				break;
 			default:
 				break;
@@ -55,12 +59,8 @@ public class SettingsLanguageFragment extends BaseFragment {
 		}
 	};
 
-	private void startLanguageInfoFragment() {
+	private void startBackUpInfoFragment() {
 		// TODO Auto-generated method stub
-		getRightTransaction(new SettingsLanguageInfoFragment()).hide(this);
-	}
-	private void startBackUpFragment() {
-		// TODO Auto-generated method stub
-		getRightTransaction(new SettingsBackUpFragment()).hide(this);
+		getRightTransaction(new SettingsBackUpInfoFragment()).hide(this);
 	}
 }

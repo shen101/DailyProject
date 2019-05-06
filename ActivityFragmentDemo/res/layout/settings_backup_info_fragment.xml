@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:padding="20dp" >
+
+        <TextView
+            android:id="@+id/glass_backup_contacts_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="80dp"
+            android:text="@string/glass_backup_contacts_btn"
+            android:textColor="@color/glass_color_white"
+            android:textSize="28sp" />
+
+        <Switch
+            android:id="@+id/glass_backup_contacts_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="80dp"
+            android:thumb="@drawable/glass_switch_thumb"
+            android:track="@drawable/glass_switch_track_selector" />
+    </RelativeLayout>
+
+    <include layout="@layout/direction_left_image" />
+
+</RelativeLayout>

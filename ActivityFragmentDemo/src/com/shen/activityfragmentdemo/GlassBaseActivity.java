@@ -8,7 +8,6 @@ import com.shen.widget.BatteryView;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -33,7 +32,7 @@ public class GlassBaseActivity extends FragmentActivity {
 	private BatteryView mBatteryView;
 	private LinearLayout actionbar_left_layout, actionbar_right_layout, naim_layout;
 	private GeneralBroadcastReceiver mBroadcastReceiver, mwifiReceiver;
-	private ImageView wifi_view, mobile_view, gps_view, bluetooth_view;
+	private ImageView wifi_view, mobile_view, gps_view, bluetooth_view, tether_view;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +59,12 @@ public class GlassBaseActivity extends FragmentActivity {
 		back_Filter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
 		registerReceiver(back_Receiver, back_Filter);
 
-		mwifiReceiver = new GeneralBroadcastReceiver(wifi_view, bluetooth_view);
+		mwifiReceiver = new GeneralBroadcastReceiver(wifi_view, bluetooth_view, tether_view);
 		IntentFilter wifi_Filter = new IntentFilter();
 		wifi_Filter.addAction(WifiManager.RSSI_CHANGED_ACTION);
 		wifi_Filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
 		wifi_Filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
+		wifi_Filter.addAction(GlassUtils.ACTION_WIFI_AP_STATE_CHANGED_TAG);
 		registerReceiver(mwifiReceiver, wifi_Filter);
 
 		GlassUtils.getCurrentMobileSingal(mContext, mobile_view);
@@ -154,6 +154,7 @@ public class GlassBaseActivity extends FragmentActivity {
 		mobile_view = (ImageView) mActionBar.getCustomView().findViewById(R.id.mobile_view);
 		gps_view = (ImageView) mActionBar.getCustomView().findViewById(R.id.gps_view);
 		bluetooth_view = (ImageView) mActionBar.getCustomView().findViewById(R.id.bluetooth_view);
+		tether_view = (ImageView) mActionBar.getCustomView().findViewById(R.id.tether_view);
 	}
 
 	@Override

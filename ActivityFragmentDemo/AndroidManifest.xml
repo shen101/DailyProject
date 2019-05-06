@@ -42,7 +42,12 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- 打开蓝牙权限 -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
-
+    <!-- 操作短信权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <!-- 监听热点状态权限 -->
+	<uses-permission android:name="android.permission.TETHER_PRIVILEGED" />
     <protected-broadcast android:name="android.intent.action.SIM_STATE_CHANGED" />
     <protected-broadcast android:name="android.provider.Telephony.SPN_STRINGS_UPDATED" />
 

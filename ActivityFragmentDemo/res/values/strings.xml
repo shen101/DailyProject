@@ -61,5 +61,7 @@
     <string name="wifi_letter_wxyz">WXYZ</string>
     <string name="wifi_letter_add">+</string>
     <string name="glass_save_failed">Saving photo failed</string>
+    <string name="glass_backup_title">Backup</string>
+    <string name="glass_backup_contacts_btn">Backup contact</string>
 
 </resources>

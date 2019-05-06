@@ -8,6 +8,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 import android.os.BatteryManager;
 import android.provider.Settings.SettingNotFoundException;
@@ -19,7 +20,7 @@ public class GeneralBroadcastReceiver extends BroadcastReceiver {
 
 	private int power = 0;
 	private BatteryView mBatteryView;
-	private ImageView wifi_singal_view, bluetooth_view;
+	private ImageView wifi_singal_view, bluetooth_view, tether_view;
 
 	public GeneralBroadcastReceiver(BatteryView view) {
 		super();
@@ -30,6 +31,13 @@ public class GeneralBroadcastReceiver extends BroadcastReceiver {
 		super();
 		this.wifi_singal_view = wifi_singal;
 		this.bluetooth_view = bluetooth_view;
+	}
+
+	public GeneralBroadcastReceiver(ImageView wifi_singal, ImageView bluetooth_view, ImageView tether_view) {
+		super();
+		this.wifi_singal_view = wifi_singal;
+		this.bluetooth_view = bluetooth_view;
+		this.tether_view = tether_view;
 	}
 
 	@Override
@@ -109,6 +117,21 @@ public class GeneralBroadcastReceiver extends BroadcastReceiver {
 				bluetooth_view.setBackgroundResource(R.drawable.ic_glass_bluetooth);
 			} else if (blueState == BluetoothAdapter.STATE_TURNING_OFF || blueState == BluetoothAdapter.STATE_OFF) {
 				bluetooth_view.setVisibility(View.GONE);
+			}
+		} else if ((GlassUtils.ACTION_WIFI_AP_STATE_CHANGED_TAG).equals(intent_action)) {
+			int state = intent.getIntExtra("wifi_state", 0);
+			Log.i("shen", "state = "+state);
+			switch (state) {
+			case 10:
+			case 11:
+				tether_view.setVisibility(View.GONE);
+				break;
+			case 12:
+			case 13:
+				tether_view.setVisibility(View.VISIBLE);
+				break;
+			default:
+				break;
 			}
 		}
 	}

@@ -196,8 +196,6 @@ public class SettingsWlanInfoFragment extends BaseFragment {
 		if (WifiManager.WIFI_STATE_CHANGED_ACTION.equals(action)) {
 			updateWifiState(intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN));
 		} else if (WifiManager.SCAN_RESULTS_AVAILABLE_ACTION.equals(action)) {
-			Log.i("shen", "WifiManager.SCAN_RESULTS_AVAILABLE_ACTION 444444444444444");
-
 			result = mWifiManager.getScanResults();
 			wlan_adapter = new HorizontalListViewAdapter(getActivity(), datas);
 			wlan_list.setAdapter(wlan_adapter);
@@ -225,7 +223,7 @@ public class SettingsWlanInfoFragment extends BaseFragment {
 			updateText(info);
 			Log.i("shen", "info.getState() = " + info.getState());
 		} else if (WifiManager.RSSI_CHANGED_ACTION.equals(action)) {
-			Log.i("shen", "WifiManager.RSSI_CHANGED_ACTION 00000000000000");
+			Log.i("shen", "WifiManager.RSSI_CHANGED_ACTION");
 		}
 	}
 
@@ -236,7 +234,6 @@ public class SettingsWlanInfoFragment extends BaseFragment {
 
 		switch (state) {
 		case WifiManager.WIFI_STATE_ENABLED:
-			Log.i("shen", "WIFI_STATE_ENABLED 111111111111111");
 			result = mWifiManager.getScanResults();
 			wlan_adapter = new HorizontalListViewAdapter(getActivity(), datas);
 			wlan_list.setAdapter(wlan_adapter);
@@ -260,11 +257,11 @@ public class SettingsWlanInfoFragment extends BaseFragment {
 			return; // not break, to avoid the call to pause() below
 
 		case WifiManager.WIFI_STATE_ENABLING:
-			Log.i("shen", "WIFI_STATE_ENABLING 2222222222222222");
+			Log.i("shen", "WIFI_STATE_ENABLING");
 			break;
 
 		case WifiManager.WIFI_STATE_DISABLED:
-			Log.i("shen", "WIFI_STATE_DISABLED 33333333333333333");
+			Log.i("shen", "WIFI_STATE_DISABLED");
 			break;
 		}
 	}

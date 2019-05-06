@@ -45,6 +45,7 @@ public class GlassUtils {
 	public static final String ACTION_FRAGMENT_ONBACK_CLICK_TAG = "com.shen.BACK_ONCLICK";
 	public static final String INTENT_INCALL_UI_NUMBER = "intent_incall_ui_number";
 	public static final String ACTION_START_PEARVIEW_TAG = "com.yiyang.glass.GLASS_PEARVIEW_MAIN";
+	public static final String ACTION_WIFI_AP_STATE_CHANGED_TAG = "android.net.wifi.WIFI_AP_STATE_CHANGED";
 	public static final String MMI_IMEI_DISPLAY = "*#06#";
 	public static final int INTENT_INCALL_UI_NUM = 1000;
 	public static final int DURATION = 50;

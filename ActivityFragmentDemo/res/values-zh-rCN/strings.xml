@@ -30,5 +30,7 @@
     <string name="wifi_signal_level_very_weak">很弱</string>
     <string name="wifi_signal_level_null">未知</string>
     <string name="glass_save_failed">保存照片失败</string>
+    <string name="glass_backup_title">备份与恢复</string>
+    <string name="glass_backup_contacts_btn">备份联系人</string>
 
 </resources>

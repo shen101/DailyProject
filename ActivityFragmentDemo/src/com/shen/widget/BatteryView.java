@@ -35,7 +35,6 @@ public class BatteryView extends View {
 		int battery_head_height = 3;
 		int battery_inside_margin = 3;
 
-		// 先画外框
 		Paint paint = new Paint();
 		paint.setColor(Color.WHITE);
 		paint.setAntiAlias(true);
@@ -49,7 +48,7 @@ public class BatteryView extends View {
 		Paint paint2 = new Paint(paint);
 		paint2.setStyle(Style.FILL);
 		paint2.setColor(Color.WHITE);
-		// 画电量
+
 		if (power_percent != 0) {
 			int p_left = battery_left + battery_inside_margin;
 			int p_top = battery_top + battery_inside_margin;
@@ -60,7 +59,6 @@ public class BatteryView extends View {
 			canvas.drawRect(rect2, paint2);
 		}
 
-		// 画电池头
 		int h_left = battery_left + battery_width;
 		int h_top = battery_top + battery_height / 2 - battery_head_height / 2;
 		int h_right = h_left + battery_head_width;
