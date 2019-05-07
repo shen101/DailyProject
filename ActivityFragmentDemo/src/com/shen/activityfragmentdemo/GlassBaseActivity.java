@@ -2,7 +2,7 @@ package com.shen.activityfragmentdemo;
 
 import com.shen.broadcastreceiver.GeneralBroadcastReceiver;
 import com.shen.fragment.MainTimeFragment;
-import com.shen.service.MonitorPhoneStatusServer;
+import com.shen.service.MonitorPhoneStatusService;
 import com.shen.utils.GlassUtils;
 import com.shen.widget.BatteryView;
 import android.annotation.SuppressLint;
@@ -64,10 +64,12 @@ public class GlassBaseActivity extends FragmentActivity {
 		wifi_Filter.addAction(WifiManager.RSSI_CHANGED_ACTION);
 		wifi_Filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
 		wifi_Filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
+		wifi_Filter.addAction(GlassUtils.NOTIFICATION_MESSAGE_NUM);
+		wifi_Filter.addAction("com.shen.serverSocket");
 		wifi_Filter.addAction(GlassUtils.ACTION_WIFI_AP_STATE_CHANGED_TAG);
 		registerReceiver(mwifiReceiver, wifi_Filter);
 
-		GlassUtils.getCurrentMobileSingal(mContext, mobile_view);
+		GlassUtils.initCurrentMobileSingal(mContext, mobile_view, true);
 		GlassUtils.initGPSSignal(mContext, gps_view, true);
 	}
 
@@ -109,6 +111,7 @@ public class GlassBaseActivity extends FragmentActivity {
 		super.onDestroy();
 		initPhoneService(false);
 		GlassUtils.initGPSSignal(mContext, gps_view, false);
+		GlassUtils.initCurrentMobileSingal(mContext, mobile_view, false);
 	}
 
 	private void register(IntentFilter mFilter) {
@@ -169,7 +172,7 @@ public class GlassBaseActivity extends FragmentActivity {
 
 	private void initPhoneService(boolean mstatus) {
 		Intent phone_service = new Intent();
-		phone_service.setClass(GlassBaseActivity.this, MonitorPhoneStatusServer.class);
+		phone_service.setClass(GlassBaseActivity.this, MonitorPhoneStatusService.class);
 		if (mstatus) {
 			startService(phone_service);
 		} else {

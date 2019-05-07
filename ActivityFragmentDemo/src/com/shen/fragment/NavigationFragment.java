@@ -9,25 +9,35 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class NavigationFragment extends BaseFragment {
 
 	private View navigation_view = null;
-	private ImageView navigation_left_image, navigation_right_image;
+	private TextView navigation_title;
+	private ImageView navigation_left_image, navigation_right_image, navigation_icon;
+	private RelativeLayout navigation_layout;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		navigation_view = inflater.inflate(R.layout.navigation_fragment, container, false);
+		navigation_view = inflater.inflate(R.layout.public_home_fragment, container, false);
 		initViews();
 		return navigation_view;
 	}
 
 	private void initViews() {
+		navigation_title = (TextView) navigation_view.findViewById(R.id.glass_public_home_title);
+		navigation_title.setText(R.string.glass_navigation_title);
+		navigation_icon = (ImageView) navigation_view.findViewById(R.id.glass_public_home_icon);
+		navigation_icon.setImageResource(R.drawable.ic_glass_navigation);
 		navigation_left_image = (ImageView) navigation_view.findViewById(R.id.left_direction_icons);
 		navigation_left_image.setOnClickListener(MyOnLinster);
 		navigation_right_image = (ImageView) navigation_view.findViewById(R.id.right_direction_icons);
 		navigation_right_image.setOnClickListener(MyOnLinster);
+		navigation_layout = (RelativeLayout) navigation_view.findViewById(R.id.glass_public_home_layout);
+		navigation_layout.setOnClickListener(MyOnLinster);
 	}
 
 	private OnClickListener MyOnLinster = new OnClickListener() {
@@ -42,7 +52,9 @@ public class NavigationFragment extends BaseFragment {
 			case R.id.right_direction_icons:
 				startRecordVideoFragment();
 				break;
-
+			case R.id.glass_public_home_layout:
+				
+				break;
 			default:
 				break;
 			}

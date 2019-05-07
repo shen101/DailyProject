@@ -4,29 +4,29 @@
     android:layout_height="match_parent" >
 
     <RelativeLayout
-        android:id="@+id/glass_pearview_layout"
+        android:id="@+id/glass_public_home_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerInParent="true" >
+        android:layout_marginTop="90dp" >
 
         <ImageView
-            android:id="@+id/glass_pearview_icon"
+            android:id="@+id/glass_public_home_icon"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_centerHorizontal="true"
-            android:focusable="false"
-            android:src="@drawable/ic_glass_rearview" />
+            android:focusable="false" />
 
         <TextView
+            android:id="@+id/glass_public_home_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/glass_pearview_icon"
+            android:layout_below="@id/glass_public_home_icon"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:focusable="false"
-            android:text="@string/glass_pearview_title"
             android:textColor="@color/glass_color_white"
-            android:textSize="42sp" />
+            android:textSize="38sp" />
     </RelativeLayout>
 
     <include layout="@layout/direction_right_image" />

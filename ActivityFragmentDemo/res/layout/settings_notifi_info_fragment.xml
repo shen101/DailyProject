@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/glass_notifi_tencent_mm_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:padding="20dp" >
+
+        <TextView
+            android:id="@+id/glass_notifi_tencent_mm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="80dp"
+            android:gravity="center_vertical"
+            android:text="@string/glass_settings_noti_tencent_mm_title"
+            android:textColor="@color/glass_color_white"
+            android:textSize="28sp" />
+
+        <Switch
+            android:id="@+id/glass_notifi_tencent_mm_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="80dp"
+            android:thumb="@drawable/glass_switch_thumb"
+            android:track="@drawable/glass_switch_track_selector" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/glass_notifi_tencent_qq_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/glass_notifi_tencent_mm_layout"
+        android:gravity="center_vertical"
+        android:padding="20dp" >
+
+        <TextView
+            android:id="@+id/glass_notifi_tencent_qq_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="80dp"
+            android:gravity="center_vertical"
+            android:text="@string/glass_settings_noti_tencent_qq_title"
+            android:textColor="@color/glass_color_white"
+            android:textSize="28sp" />
+
+        <Switch
+            android:id="@+id/glass_notifi_tencent_qq_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="80dp"
+            android:thumb="@drawable/glass_switch_thumb"
+            android:track="@drawable/glass_switch_track_selector" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/glass_notifi_android_mms_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/glass_notifi_tencent_qq_layout"
+        android:gravity="center_vertical"
+        android:padding="20dp" >
+
+        <TextView
+            android:id="@+id/glass_notifi_android_mms_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="80dp"
+            android:gravity="center_vertical"
+            android:text="@string/glass_settings_noti_android_mms_title"
+            android:textColor="@color/glass_color_white"
+            android:textSize="28sp" />
+
+        <Switch
+            android:id="@+id/glass_notifi_android_mms_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="80dp"
+            android:thumb="@drawable/glass_switch_thumb"
+            android:track="@drawable/glass_switch_track_selector" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/glass_notifi_incallui_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/glass_notifi_android_mms_layout"
+        android:gravity="center_vertical"
+        android:padding="20dp" >
+
+        <TextView
+            android:id="@+id/glass_notifi_incallui_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="80dp"
+            android:gravity="center_vertical"
+            android:text="@string/glass_settings_noti_incallui_title"
+            android:textColor="@color/glass_color_white"
+            android:textSize="28sp" />
+
+        <Switch
+            android:id="@+id/glass_notifi_incallui_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="80dp"
+            android:thumb="@drawable/glass_switch_thumb"
+            android:track="@drawable/glass_switch_track_selector" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/glass_notifi_settings"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/glass_notifi_incallui_layout"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_glass_application"
+        android:padding="20dp" />
+
+    <include layout="@layout/direction_left_image" />
+
+</RelativeLayout>

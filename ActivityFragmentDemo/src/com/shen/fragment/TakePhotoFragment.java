@@ -12,27 +12,33 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class TakePhotoFragment extends BaseFragment {
 
 	private View photo_view = null;
-	private ImageView photo_left_btn, photo_right_btn;
+	private TextView photo_title;
+	private ImageView photo_left_btn, photo_right_btn, photo_icon;
 	private RelativeLayout glass_take_photo_layout;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		photo_view = inflater.inflate(R.layout.photo_fragment, container, false);
+		photo_view = inflater.inflate(R.layout.public_home_fragment, container, false);
 		initViews();
 		return photo_view;
 	}
 
 	private void initViews() {
+		photo_title = (TextView) photo_view.findViewById(R.id.glass_public_home_title);
+		photo_title.setText(R.string.glass_takephoto_title);
+		photo_icon = (ImageView) photo_view.findViewById(R.id.glass_public_home_icon);
+		photo_icon.setImageResource(R.drawable.ic_glass_photo);
 		photo_left_btn = (ImageView) photo_view.findViewById(R.id.left_direction_icons);
 		photo_left_btn.setOnClickListener(MyOnLinster);
 		photo_right_btn = (ImageView) photo_view.findViewById(R.id.right_direction_icons);
 		photo_right_btn.setOnClickListener(MyOnLinster);
-		glass_take_photo_layout = (RelativeLayout) photo_view.findViewById(R.id.glass_take_photo_layout);
+		glass_take_photo_layout = (RelativeLayout) photo_view.findViewById(R.id.glass_public_home_layout);
 		glass_take_photo_layout.setOnClickListener(MyOnLinster);
 	}
 
@@ -48,7 +54,7 @@ public class TakePhotoFragment extends BaseFragment {
 			case R.id.right_direction_icons:
 				startPhoneFragment();
 				break;
-			case R.id.glass_take_photo_layout:
+			case R.id.glass_public_home_layout:
 				startPearViewInfoActivity();
 				break;
 

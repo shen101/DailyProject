@@ -3,18 +3,17 @@ package com.shen.broadcastreceiver;
 import com.shen.activityfragmentdemo.R;
 import com.shen.utils.GlassUtils;
 import com.shen.widget.BatteryView;
-
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 import android.os.BatteryManager;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class GeneralBroadcastReceiver extends BroadcastReceiver {
 
@@ -44,6 +43,7 @@ public class GeneralBroadcastReceiver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
 		String intent_action = intent.getAction();
+		Log.i("shen", "intent_action = " + intent_action);
 		if (Intent.ACTION_BATTERY_CHANGED.equals(intent_action)) {
 			int level = intent.getIntExtra("level", 0);
 			int scale = intent.getIntExtra("scale", 100);
@@ -56,7 +56,7 @@ public class GeneralBroadcastReceiver extends BroadcastReceiver {
 
 				break;
 			case BatteryManager.BATTERY_STATUS_FULL:
-				// ³äÂú
+
 				break;
 			case BatteryManager.BATTERY_STATUS_DISCHARGING:
 
@@ -68,10 +68,11 @@ public class GeneralBroadcastReceiver extends BroadcastReceiver {
 			int signal = GlassUtils.getWiFiSignal(context);
 			try {
 				if (!GlassUtils.isAirplaneMode(context)) {
-					Log.i("shen", "signal = " + signal);
+					Log.i("shen", "signal ========== " + signal);
 					if (signal == 0) {
 						int wifistate = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE,
 								WifiManager.WIFI_STATE_DISABLED);
+						Log.i("shen", "wifistate ========== " + wifistate);
 						if (wifistate == WifiManager.WIFI_STATE_DISABLED) {
 							wifi_singal_view.setVisibility(View.GONE);
 						} else {
@@ -120,7 +121,7 @@ public class GeneralBroadcastReceiver extends BroadcastReceiver {
 			}
 		} else if ((GlassUtils.ACTION_WIFI_AP_STATE_CHANGED_TAG).equals(intent_action)) {
 			int state = intent.getIntExtra("wifi_state", 0);
-			Log.i("shen", "state = "+state);
+			Log.i("shen", "state = " + state);
 			switch (state) {
 			case 10:
 			case 11:
@@ -133,6 +134,21 @@ public class GeneralBroadcastReceiver extends BroadcastReceiver {
 			default:
 				break;
 			}
+		} else if ((GlassUtils.NOTIFICATION_MESSAGE_NUM).equals(intent_action)) {
+			String packagename = intent.getStringExtra(GlassUtils.NOTIFICATION_MESSAGE_PACKAGE_NUM);
+			String noti_title = intent.getStringExtra(GlassUtils.NOTIFICATION_MESSAGE_TITLE_NUM);
+			String noti_content = intent.getStringExtra(GlassUtils.NOTIFICATION_MESSAGE_CONTENTS_NUM);
+			if (GlassUtils.getBotifiAppValues(context, GlassUtils.NOTIFICATION_TABLE_TENCENT_MM)) {
+
+			} else if (GlassUtils.getBotifiAppValues(context, GlassUtils.NOTIFICATION_TABLE_TENCENT_QQ)) {
+
+			} else if (GlassUtils.getBotifiAppValues(context, GlassUtils.NOTIFICATION_TABLE_ANDROID_SMS)) {
+
+			} else if (GlassUtils.getBotifiAppValues(context, GlassUtils.NOTIFICATION_TABLE_INCALLUI)) {
+
+			}
+		}else if("com.shen.serverSocket".equals(intent_action)){
+			Toast.makeText(context, "service message = " + intent.getStringExtra("message"), 0).show();
 		}
 	}
 

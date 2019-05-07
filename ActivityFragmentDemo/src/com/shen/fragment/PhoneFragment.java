@@ -10,27 +10,33 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class PhoneFragment extends BaseFragment {
 
 	private View phone_view = null;
-	private ImageView phone_left_btn, phone_right_btn;
+	private TextView phone_title;
+	private ImageView phone_left_btn, phone_right_btn, phone_icon;
 	private RelativeLayout phone_layout;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		phone_view = inflater.inflate(R.layout.phone_fragment, container, false);
+		phone_view = inflater.inflate(R.layout.public_home_fragment, container, false);
 		initViews();
 		return phone_view;
 	}
 
 	private void initViews() {
+		phone_title = (TextView) phone_view.findViewById(R.id.glass_public_home_title);
+		phone_title.setText(R.string.glass_phone_contacts_title);
+		phone_icon = (ImageView) phone_view.findViewById(R.id.glass_public_home_icon);
+		phone_icon.setImageResource(R.drawable.ic_glass_phone);
 		phone_left_btn = (ImageView) phone_view.findViewById(R.id.left_direction_icons);
 		phone_left_btn.setOnClickListener(MyOnLinster);
 		phone_right_btn = (ImageView) phone_view.findViewById(R.id.right_direction_icons);
 		phone_right_btn.setOnClickListener(MyOnLinster);
-		phone_layout = (RelativeLayout) phone_view.findViewById(R.id.glass_phone_onclick);
+		phone_layout = (RelativeLayout) phone_view.findViewById(R.id.glass_public_home_layout);
 		phone_layout.setOnClickListener(MyOnLinster);
 	}
 
@@ -46,7 +52,7 @@ public class PhoneFragment extends BaseFragment {
 			case R.id.right_direction_icons:
 				startMusicFragment();
 				break;
-			case R.id.glass_phone_onclick:
+			case R.id.glass_public_home_layout:
 				startPhoneInfosFragment();
 				break;
 			default:

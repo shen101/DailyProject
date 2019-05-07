@@ -40,7 +40,7 @@ public class SettingsBackUpInfoFragment extends BaseFragment {
 				onFragmentBackClick();
 				break;
 			case R.id.right_direction_icons:
-
+				
 				break;
 			case R.id.glass_backup_contacts_btn:
 				Intent export_contacts_intent = new Intent();

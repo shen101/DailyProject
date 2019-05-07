@@ -9,7 +9,7 @@ import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
-public class MonitorPhoneStatusServer extends Service {
+public class MonitorPhoneStatusService extends Service {
 
 	private TelephonyManager mTelephonyManager;
 

@@ -32,5 +32,46 @@
     <string name="glass_save_failed">保存照片失败</string>
     <string name="glass_backup_title">备份与恢复</string>
     <string name="glass_backup_contacts_btn">备份联系人</string>
+    <string name="glass_settings_noti_title">通知设定</string>
+    <string name="glass_settings_noti_note_title">推动通知设定</string>
+    <string name="glass_settings_noti_tencent_mm_title">微信</string>
+    <string name="glass_settings_noti_tencent_qq_title">QQ</string>
+    <string name="glass_settings_noti_android_mms_title">短信</string>
+    <string name="glass_settings_noti_incallui_title">通话</string>
+    <string name="system_text_sending">发送端</string>
+    <string name="system_text_receiving">接收端</string>
+    <string name="system_text_start_scan">开始扫描</string>
+    <string name="system_text_stop_scan">停止扫描</string>
+    <string name="system_text_send">发送广告</string>
+    <string name="system_text_stop_send">停止广告</string>
+    <string name="system_text_blue_no_support">您的设备不支持蓝牙功能</string>
+    <string name="system_text_blue_le_no_support">您的蓝牙设备不支持低功耗操作</string>
+    <string name="system_text_blue_peripheral_no_support">您的蓝牙设备不支持外围广告功能</string>
+    <string name="system_text_openblue_dialog_message">是否允许打开蓝牙？</string>
+    <string name="system_text_status">未知状态</string>
+    <string name="system_text_send_success">发送成功</string>
+    <string name="system_text_disconnection">断开连接</string>
+    <!-- error -->
+    <string name="system_text_adv_error_one">广告数据大于31个字节</string>
+    <string name="system_text_adv_error_two">没有可用的广告实例</string>
+    <string name="system_text_adv_error_three">广告已经开始，因此无法再次投放广告</string>
+    <string name="system_text_adv_error_four">由于内部错误，操作失败</string>
+    <string name="system_text_adv_error_five">此平台不支持此功能</string>
+    <string name="system_text_connect_success">连接成功</string>
+    <string name="system_text_connect_failed">连接失败</string>
+    <string name="system_text_send_data">发送内容</string>
+    <string name="system_text_send_edit_hint">请输入要发送的内容</string>
+    <!-- scan error -->
+    <string name="system_text_scan_error_one">正在扫描中无需再次扫描</string>
+    <string name="system_text_scan_error_two">由于无法注册，所以无法开始扫描</string>
+    <string name="system_text_scan_error_three">由于内部错误，无法开始扫描</string>
+    <string name="system_text_scan_error_four">不支持低功耗扫描功能</string>
+    <string name="system_text_scan_error_five">由于硬件资源不足，无法开始扫描</string>
+    <string name="system_text_devie_scan">蓝牙搜索</string>
+    <!-- send server -->
+    <string name="system_text_send_server_btn">发送数据</string>
+    <string name="glass_default_configation">对不起，您的手机不支持该功能</string>
+    <string name="glass_default_note">注意！</string>
+    <string name="glass_open_noti_permission_contents">请前往通知使用权限，并勾选，否则头盔端无法有效收到手机通知消息</string>
 
 </resources>
