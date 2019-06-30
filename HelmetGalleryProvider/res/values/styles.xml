@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="HelmetGelleryMainTheme" parent="@android:style/Theme.Material.NoActionBar.Fullscreen">
+
+    </style>
+
+</resources>

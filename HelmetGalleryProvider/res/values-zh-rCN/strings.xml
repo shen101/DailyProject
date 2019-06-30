@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="operating_image_dialog_title">请选择</string>
+    <string name="empty_message_title">未检测到图库中存在照片，是否打开相机拍照？</string>
+    <string name="option_camera_btn_text">去拍照</string>
+    <string name="option_video_btn_text">去录像</string>
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="image_operating_options">
+        <item>Delete</item>
+        <item>Auto Play</item>
+        <item>Share</item>
+    </string-array>
+    <string-array name="video_operating_options">
+        <item>Delete</item>
+        <item>Play</item>
+        <item>Auto Play</item>
+        <item>Share</item>
+    </string-array>
+
+</resources>

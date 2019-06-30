@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="image_operating_options">
+        <item>删除</item>
+        <item>自动浏览</item>
+        <item>分享</item>
+    </string-array>
+    <string-array name="video_operating_options">
+        <item>删除</item>
+        <item>播放</item>
+        <item>自动浏览</item>
+        <item>分享</item>
+    </string-array>
+
+</resources>
