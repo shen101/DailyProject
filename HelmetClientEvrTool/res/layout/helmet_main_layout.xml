@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/helmet_main_background"
+    android:orientation="vertical" >
+
+    <ImageButton
+        android:id="@+id/helmet_main_ble_connect_status_icon"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/helmet_main_ble_connect_selector" />
+
+    <ImageView
+        android:id="@+id/helmet_main_logo_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/helmet_main_title_icon" />
+
+    <ImageView
+        android:id="@+id/helmet_mainline_icon"
+        android:layout_width="match_parent"
+        android:layout_height="10px"
+        android:layout_below="@id/helmet_main_logo_icon"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/helmet_main_divid_line" />
+
+    <GridView
+        android:id="@+id/helmet_main_grilview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/helmet_mainline_icon"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="54dp"
+        android:background="@null"
+        android:numColumns="2"
+        android:verticalSpacing="54dp" />
+
+</RelativeLayout>

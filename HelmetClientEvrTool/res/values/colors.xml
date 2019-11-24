@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="helmet_action_title_color">@android:color/white</color>
+    <color name="helmet_background_color">@android:color/black</color>
+    <color name="helmet_tab_line_selected_color">#FF0000</color>
+    <color name="helmet_custom_line_color">#2C3036</color>
+    <color name="helmet_setting_camera_item_text_color">#89929c</color>
+    <color name="helmet_setting_title_text_color">#dbdde0</color>
+    <color name="helmet_setting_list_line_color">#2A2F35</color>
+    <color name="helmet_setting_transparent_color">@android:color/transparent</color>
+    <color name="helmet_color_edittext_selected_color">#2C2F36</color>
+    <color name="helmet_color_edittext_unselected_color">#7A7A7A</color>
+    <color name="helmet_default_preference_title_color">#808992</color>
+    <color name="helmet_default_btn_pressed_color">#939CA5</color>
+    <color name="helmet_default_btn_unpressed_color">#E7141A</color>
+    <color name="helmet_setting_login_tab_line_color">#2B3036</color>
+    <color name="helmet_setting_hotspot_edit_hint_color">#5A6167</color>
+    <color name="helmet_color_list_divider_color">#2D2D2D</color>
+
+</resources>

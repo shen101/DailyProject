@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/helmet_setting_login_background" >
+
+    <ImageView
+        android:id="@+id/helmet_settings_login_logo"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp"
+        android:src="@drawable/helmet_setting_login_top" />
+
+    <LinearLayout
+        android:id="@+id/helmet_settings_login_progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/helmet_settings_login_logo"
+        android:layout_marginLeft="@dimen/helmet_setting_20dp_size"
+        android:layout_marginRight="@dimen/helmet_setting_20dp_size"
+        android:layout_marginTop="53dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp" >
+
+            <TextView
+                android:id="@+id/helmet_settings_login_signin_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="6dp"
+                android:text="@string/helmet_setting_login_sign_in_text"
+                android:textColor="@color/helmet_action_title_color"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/helmet_settings_login_signup_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="6dp"
+                android:text="@string/helmet_setting_login_sign_up_text"
+                android:textColor="@color/helmet_action_title_color"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/helmet_settings_login_progress"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:max="100"
+            android:progress="35"
+            android:progressDrawable="@drawable/helmet_setting_login_progressbar_landscape_line" />
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/helmet_setting_login_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/helmet_settings_login_progress_layout"
+        android:layout_marginTop="40dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="38dp"
+        android:gravity="center_horizontal" >
+
+        <ImageView
+            android:id="@+id/helmet_settings_login_google_btn"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:elevation="@dimen/helmet_setting_20dp_size"
+            android:src="@drawable/google_login" />
+
+        <ImageView
+            android:id="@+id/helmet_settings_login_facebook_btn"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/helmet_settings_login_google_btn"
+            android:elevation="@dimen/helmet_setting_20dp_size"
+            android:src="@drawable/facebook_login" />
+    </RelativeLayout>
+
+</RelativeLayout>

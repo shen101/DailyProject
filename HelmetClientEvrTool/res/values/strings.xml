@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HelmetClientEvrTool</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <!-- main -->
+    <string name="helmet_main_navigation_title">Navigation</string>
+    <string name="helmet_main_gallery_title">Gallery</string>
+    <string name="helmet_main_rides_title">My Rides</string>
+    <string name="helmet_main_setting_title">Setting</string>
+    <!-- setting ble -->
+    <string name="helmet_setting_ble_search_title">Device List</string>
+    <string name="helmet_setting_ble_connect">Bluetooth connected</string>
+    <string name="helmet_setting_ble_disconnect">Bluetooth disconnected</string>
+    <string name="helmet_setting_ble_unbind_device">The equipment has been unstrapped</string>
+    <string name="helmet_setting_ble_unbind">Unbind</string>
+    <string name="helmet_setting_ble_search_devices">Search Helmet</string>
+    <string name="helmet_setting_ble_unbond_devices">Available equipment</string>
+    <string name="helmet_setting_ble_bond_devices">Paired device</string>
+    <string name="helmet_setting_ble_turn_on_title">Turn on</string>
+    <string name="helmet_setting_ble_shut_down_title">Shut down</string>
+    <!-- setting hotspot -->
+    <string name="helmet_setting_hotspot_title">WIFI</string>
+    <string name="helmet_setting_hotspot_name_title">Hotspot:</string>
+    <string name="helmet_setting_hotspot_name_hint_title">Please enter a hot spot name</string>
+    <string name="helmet_setting_hotspot_pwd_title">Hotspot Password:</string>
+    <string name="helmet_setting_hotspot_pwd_hint_title">Please input a password</string>
+    <string name="helmet_setting_hotspot_safety_title">Hotspot Safety:</string>
+    <string name="helmet_setting_hotspot_ap_sync_btn_text">Send connection</string>
+    <string name="helmet_setting_hotspot_safety_type_none">None</string>
+    <string name="helmet_setting_hotspot_safety_type_wep">WEP</string>
+    <string name="helmet_setting_hotspot_safety_type_wpa2">WPA2-WPA</string>
+    <string name="helmet_setting_hotspot_ap_name_null">The local hotspot name you entered cannot be empty</string>
+    <string name="helmet_setting_hotspot_ap_pwd_null">The local hotspot password you entered cannot be empty</string>
+    <!-- setting camera -->
+    <string name="helmet_setting_helmet_title">Helmet</string>
+    <string name="helmet_setting_camera_title">Camera</string>
+    <string name="helmet_setting_camera_record_title">Recording quality</string>
+    <string name="helmet_setting_camera_Photo_title">Photo quality</string>
+    <string name="helmet_setting_camera_front_title">Front camera</string>
+    <string name="helmet_setting_camera_rear_title">Rear camera</string>
+    <string name="helmet_setting_camera_480p">SD 640 x 480</string>
+    <string name="helmet_setting_camera_720p">HD 1280 x 720</string>
+    <string name="helmet_setting_camera_1080p">FULL HD 1920 x 1080</string>
+    <string name="helmet_setting_camera_720_pic">1280 x 720</string>
+    <string name="helmet_setting_camera_1200_pic">1600 x 1200</string>
+    <string name="helmet_setting_camera_1536_pic">2048 x 1536</string>
+    <string name="helmet_setting_camera_ordinary_pic">2048 x 1536</string>
+    <string name="helmet_setting_camera_fine_pic">2560 x 1920</string>
+    <string name="helmet_setting_camera_ultra_clear_pic">2880 x 1728</string>
+    <!-- setting main -->
+    <string name="helmet_setting_title">Setting</string>
+    <string name="helmet_setting_item_connect_helmet">Link Helmet</string>
+    <string name="helmet_setting_item_sync_wifi">Wi-Fi</string>
+    <string name="helmet_setting_item_sync_camera">Camera</string>
+    <string name="helmet_setting_item_sync_login">Login</string>
+    <string name="helmet_setting_item_sync_notice">Notification</string>
+    <string name="helmet_setting_item_sync_contact">Contact</string>
+    <!-- setting login -->
+    <string name="helmet_setting_login_sign_in_text">SIGN IN</string>
+    <string name="helmet_setting_login_sign_up_text">SIGN UP</string>
+    <string name="helmet_setting_login_sign_name_text">Username</string>
+    <string name="helmet_setting_login_sign_pwd_text">Password</string>
+    <string name="helmet_setting_login_sign_pwd_forgot_text">Forgot</string>
+    <string name="helmet_setting_login_name_null">The username you entered cannot be empty</string>
+    <string name="helmet_setting_login_pwd_null">The user password you entered cannot be empty</string>
+
+</resources>

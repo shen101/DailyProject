@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- main -->
+    <string name="helmet_main_navigation_title">導航</string>
+    <string name="helmet_main_gallery_title">圖庫</string>
+    <string name="helmet_main_rides_title">我的軌跡</string>
+    <string name="helmet_main_setting_title">設置</string>
+    <!-- setting ble -->
+    <string name="helmet_setting_ble_search_title">設備列表</string>
+    <string name="helmet_setting_ble_connect">藍牙已連接</string>
+    <string name="helmet_setting_ble_disconnect">藍牙已斷開</string>
+    <string name="helmet_setting_ble_unbind_device">設備已解綁</string>
+    <string name="helmet_setting_ble_unbind">取消綁定</string>
+    <string name="helmet_setting_ble_search_devices">搜索頭盔</string>
+    <string name="helmet_setting_ble_unbond_devices">可用設備</string>
+    <string name="helmet_setting_ble_bond_devices">已配對設備</string>
+    <string name="helmet_setting_ble_turn_on_title">打開</string>
+    <string name="helmet_setting_ble_shut_down_title">關閉</string>
+    <!-- setting hotspot -->
+    <string name="helmet_setting_hotspot_title">網絡設置</string>
+    <string name="helmet_setting_hotspot_name_title">熱點賬號：</string>
+    <string name="helmet_setting_hotspot_name_hint_title">請輸入熱點名稱</string>
+    <string name="helmet_setting_hotspot_pwd_title">熱點密碼：</string>
+    <string name="helmet_setting_hotspot_pwd_hint_title">請輸入熱點密碼</string>
+    <string name="helmet_setting_hotspot_safety_title">安全性：</string>
+    <string name="helmet_setting_hotspot_ap_sync_btn_text">發送連接</string>
+    <string name="helmet_setting_hotspot_safety_type_none">無</string>
+    <string name="helmet_setting_hotspot_ap_name_null">您輸入的本機熱點名稱不能為空</string>
+    <string name="helmet_setting_hotspot_ap_pwd_null">您輸入的本機熱點密碼不能為空</string>
+    <!-- setting camera -->
+    <string name="helmet_setting_helmet_title">頭盔</string>
+    <string name="helmet_setting_camera_title">相機</string>
+    <string name="helmet_setting_camera_record_title">錄制質量</string>
+    <string name="helmet_setting_camera_Photo_title">拍照質量</string>
+    <string name="helmet_setting_camera_front_title">前置相機</string>
+    <string name="helmet_setting_camera_rear_title">後置相機</string>
+    <!-- setting main -->
+    <string name="helmet_setting_title">設置</string>
+    <string name="helmet_setting_item_connect_helmet">鏈接頭盔</string>
+    <string name="helmet_setting_item_sync_wifi">無線網絡</string>
+    <string name="helmet_setting_item_sync_camera">相機</string>
+    <string name="helmet_setting_item_sync_login">登陸</string>
+    <string name="helmet_setting_item_sync_notice">通知</string>
+    <string name="helmet_setting_item_sync_contact">聯系人</string>
+    <!-- setting login -->
+    <string name="helmet_setting_login_sign_in_text">登陸</string>
+    <string name="helmet_setting_login_sign_up_text">註冊</string>
+    <string name="helmet_setting_login_sign_name_text">用戶名</string>
+    <string name="helmet_setting_login_sign_pwd_text">密碼</string>
+    <string name="helmet_setting_login_sign_pwd_forgot_text">忘記</string>
+    <string name="helmet_setting_login_name_null">您輸入的用戶名不能為空！</string>
+    <string name="helmet_setting_login_pwd_null">您輸入的用戶密碼不能為空！</string>
+
+</resources>

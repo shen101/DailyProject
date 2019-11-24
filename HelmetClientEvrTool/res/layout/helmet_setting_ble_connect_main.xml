@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/two_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="60dp" >
+
+        <TextView
+            android:id="@+id/startble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/helmet_action_title_color"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/helmet_settings_ble_on_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:button="@drawable/helmet_setting_off_on_switch" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ble_search_devices_settings_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@id/two_layout"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/ble_list_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/helmet_setting_ble_search_title"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/ble_list_textview"
+            android:src="@drawable/helmet_split_icon" />
+
+        <ProgressBar
+            android:id="@+id/progressbarl"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:indeterminateTint="#CFCFCF"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_below="@+id/ble_search_devices_settings_title_layout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/helmet_color_list_divider_color" />
+
+    <ListView
+        android:id="@+id/list_devices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view1"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/connected_device"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_devices"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/helmet_action_title_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/helmet_setting_50dp_size"
+        android:layout_alignParentBottom="true"
+        android:background="@color/helmet_background_color"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/helmet_settings_ble_search_btn"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/helmet_setting_ble_search_devices"
+            android:textColor="@color/helmet_action_title_color" />
+
+        <TextView
+            android:id="@+id/interval_text"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/helmet_settings_ble_search_btn" />
+
+        <Button
+            android:id="@+id/helmet_settings_ble_unbind_btn"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@+id/interval_text"
+            android:text="@string/helmet_setting_ble_unbind"
+            android:textColor="@color/helmet_action_title_color" />
+    </RelativeLayout>
+
+</RelativeLayout>

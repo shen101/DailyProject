@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/helmet_setting_list_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="71dp" >
+
+    <TextView
+        android:id="@+id/helmet_setting_list_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/helmet_setting_title_text_color"
+        android:textSize="16dp" />
+
+    <ImageView
+        android:id="@+id/helmet_setting_list_item_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:paddingBottom="8dp"
+        android:scaleType="fitCenter" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/helmet_setting_list_line_color" />
+
+</RelativeLayout>

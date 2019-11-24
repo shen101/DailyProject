@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/helmet_setting_signup_name_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/helmet_setting_signup_name_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/helmet_setting_20dp_size"
+        android:layout_marginRight="@dimen/helmet_setting_20dp_size"
+        android:background="@drawable/helmet_edittext_background_selector"
+        android:hint="@string/helmet_setting_login_sign_name_text"
+        android:paddingBottom="12dp"
+        android:textColor="@color/helmet_setting_camera_item_text_color"
+        android:textColorHint="@color/helmet_default_preference_title_color"
+        android:textCursorDrawable="@drawable/helmet_edittext_textcursor_background"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:id="@+id/helmet_setting_signup_pwd_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp" >
+
+        <EditText
+            android:id="@+id/helmet_setting_signup_pwd_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/helmet_setting_20dp_size"
+            android:layout_marginRight="@dimen/helmet_setting_20dp_size"
+            android:layout_marginTop="@dimen/helmet_setting_10dp_size"
+            android:background="@drawable/helmet_edittext_background_selector"
+            android:hint="@string/helmet_setting_login_sign_pwd_text"
+            android:paddingBottom="12dp"
+            android:textColor="@color/helmet_setting_camera_item_text_color"
+            android:textColorHint="@color/helmet_default_preference_title_color"
+            android:textCursorDrawable="@drawable/helmet_edittext_textcursor_background"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/helmet_setting_signup_pwd_forgot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/helmet_setting_20dp_size"
+            android:text="@string/helmet_setting_login_sign_pwd_forgot_text"
+            android:textColor="@color/helmet_default_preference_title_color" />
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/helmet_setting_signup_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/helmet_setting_10dp_size"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/helmet_setting_login_btn" />
+
+</LinearLayout>

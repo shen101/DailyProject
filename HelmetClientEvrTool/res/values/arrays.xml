@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="helmet_hotspot_safety_type_array">
+        <item>@string/helmet_setting_hotspot_safety_type_none</item>
+        <item>@string/helmet_setting_hotspot_safety_type_wep</item>
+        <item>@string/helmet_setting_hotspot_safety_type_wpa2</item>
+    </string-array>
+
+</resources>

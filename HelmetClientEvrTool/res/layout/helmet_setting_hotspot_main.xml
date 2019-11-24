@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/accounts_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/helmet_setting_20dp_size"
+        android:layout_marginRight="@dimen/helmet_setting_20dp_size"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/wifi_accounts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/helmet_setting_hotspot_name_title"
+            android:textColor="@color/helmet_default_preference_title_color"
+            android:textSize="12dp" />
+
+        <EditText
+            android:id="@+id/accounts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/helmet_edittext_background_selector"
+            android:hint="@string/helmet_setting_hotspot_name_hint_title"
+            android:paddingBottom="8dp"
+            android:textColor="@color/helmet_action_title_color"
+            android:textColorHint="@color/helmet_setting_hotspot_edit_hint_color"
+            android:textCursorDrawable="@drawable/helmet_edittext_textcursor_background"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Password_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/accounts_layout"
+        android:layout_marginLeft="@dimen/helmet_setting_20dp_size"
+        android:layout_marginRight="@dimen/helmet_setting_20dp_size"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/wifi_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/helmet_setting_hotspot_pwd_title"
+            android:textColor="@color/helmet_default_preference_title_color"
+            android:textSize="12dp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/helmet_edittext_background_selector"
+            android:hint="@string/helmet_setting_hotspot_pwd_hint_title"
+            android:inputType="textPassword"
+            android:paddingBottom="10dp"
+            android:textColor="@color/helmet_action_title_color"
+            android:textColorHint="@color/helmet_setting_hotspot_edit_hint_color"
+            android:textCursorDrawable="@drawable/helmet_edittext_textcursor_background"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/helmet_settings_hotspot_safety_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Password_layout"
+        android:layout_marginLeft="@dimen/helmet_setting_10dp_size"
+        android:layout_marginRight="@dimen/helmet_setting_20dp_size"
+        android:layout_marginTop="38dp" >
+
+        <TextView
+            android:id="@+id/security_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/helmet_setting_10dp_size"
+            android:text="@string/helmet_setting_hotspot_safety_title"
+            android:textColor="@color/helmet_default_preference_title_color"
+            android:textSize="12dp" />
+
+        <Spinner
+            android:id="@+id/security_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/security_txt"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/helmet_setting_hotspot_spinner_drop_down"
+            android:popupBackground="@color/helmet_action_title_color" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/security_spinner"
+            android:layout_marginLeft="@dimen/helmet_setting_10dp_size"
+            android:layout_marginTop="8dp"
+            android:background="@color/helmet_color_edittext_selected_color" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/helmet_settings_hotspot_btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/helmet_setting_40dp_size"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/helmet_hotspot_btn"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/helmet_camera_btn_selector"
+            android:elevation="10dp"
+            android:gravity="center|bottom"
+            android:paddingBottom="14dp"
+            android:text="@string/helmet_setting_helmet_title"
+            android:textColor="@color/helmet_action_title_color" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.yiyang.helmetclientevrtool.widget.HelmetCircleImageView
+        android:id="@+id/helmet_setting_usericon"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/helmet_setting_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/helmet_setting_title_text_color"
+        android:textSize="23dp" />
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="6px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dp"
+        android:background="@color/helmet_tab_line_selected_color" />
+
+    <ListView
+        android:id="@+id/helmet_setting_main_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@null"
+        android:scrollbars="none"/>
+
+</LinearLayout>

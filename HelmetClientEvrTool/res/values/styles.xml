@@ -1,0 +1,30 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="HelmetClientMainTheme" parent="@android:Theme.Material">
+        <item name="android:windowBackground">@color/helmet_background_color</item>
+        <item name="android:tabWidgetStyle">@style/CustomTabWidgetStyle</item>
+        <item name="android:actionBarSize">@dimen/helmet_default_actionbar_hight_size</item>
+        <item name="android:actionBarStyle">@style/CustomActionBarStyle</item>
+    </style>
+
+    <style name="CustomActionBarStyle" parent="@android:style/Widget.Material.ActionBar">
+        <item name="android:contentInsetStart">@dimen/helmet_default_dimen_0_size</item>
+        <item name="android:contentInsetEnd">@dimen/helmet_default_dimen_0_size</item>
+        <item name="android:contentInsetLeft">@dimen/helmet_default_dimen_0_size</item>
+        <item name="android:contentInsetRight">@dimen/helmet_default_dimen_0_size</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="CustomTabWidgetStyle" parent="@android:Widget.Material.TabWidget">
+        <item name="android:layout">@layout/helmet_custom_textview_layout</item>
+        <item name="android:tabStripEnabled">false</item>
+    </style>
+
+    <style name="HelmetFullscreenTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen">
+        <item name="android:colorPrimary">@color/helmet_setting_transparent_color</item>
+        <item name="android:colorPrimaryDark">@color/helmet_setting_transparent_color</item>
+        <item name="android:windowBackground">@color/helmet_setting_transparent_color</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+</resources>
