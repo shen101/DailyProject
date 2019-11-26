@@ -15,8 +15,8 @@
     <string name="helmet_setting_ble_search_devices">搜索头盔</string>
     <string name="helmet_setting_ble_unbond_devices">可用设备</string>
     <string name="helmet_setting_ble_bond_devices">已配对设备</string>
-    <string name="helmet_setting_ble_turn_on_title">打开</string>
-    <string name="helmet_setting_ble_shut_down_title">关闭</string>
+    <string name="helmet_setting_ble_turn_on_title">打开蓝牙</string>
+    <string name="helmet_setting_ble_shut_down_title">关闭蓝牙</string>
     <!-- setting hotspot -->
     <string name="helmet_setting_hotspot_title">网络设置</string>
     <string name="helmet_setting_hotspot_name_title">热点账号：</string>
@@ -51,5 +51,15 @@
     <string name="helmet_setting_login_sign_pwd_forgot_text">忘记</string>
     <string name="helmet_setting_login_name_null">您输入的用户名不能为空！</string>
     <string name="helmet_setting_login_pwd_null">您输入的用户密码不能为空！</string>
+    <!-- scan error -->
+    <string name="helmet_text_scan_error_one">正在扫描中无需再次扫描</string>
+    <string name="helmet_text_scan_error_two">由于无法注册，所以无法开始扫描</string>
+    <string name="helmet_text_scan_error_three">由于内部错误，无法开始扫描</string>
+    <string name="helmet_text_scan_error_four">不支持低功耗扫描功能</string>
+    <string name="helmet_text_scan_error_five">由于硬件资源不足，无法开始扫描</string>
+    <string name="helmet_text_bluetooth_is_no_open">蓝牙适配器未打开！</string>
+    <!-- settings notice title -->
+    <string name="helmet_settings_notice_list_status_text">请开通 ERA 通知授权许可，才可以操作可推送通知的应用。</string>
+    <string name="helmet_settings_ble_service_no_run">请进入ERA设置，蓝牙，开启蓝牙</string>
 
 </resources>

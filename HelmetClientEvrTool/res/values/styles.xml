@@ -1,9 +1,10 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-
+    
     <style name="HelmetClientMainTheme" parent="@android:Theme.Material">
         <item name="android:windowBackground">@color/helmet_background_color</item>
         <item name="android:tabWidgetStyle">@style/CustomTabWidgetStyle</item>
         <item name="android:actionBarSize">@dimen/helmet_default_actionbar_hight_size</item>
+        <item name="android:windowAnimationStyle">@style/ActivityAnimationStyle</item>
         <item name="android:actionBarStyle">@style/CustomActionBarStyle</item>
     </style>
 
@@ -20,11 +21,15 @@
         <item name="android:tabStripEnabled">false</item>
     </style>
 
-    <style name="HelmetFullscreenTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen">
+    <style name="HelmetFullscreenTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
         <item name="android:colorPrimary">@color/helmet_setting_transparent_color</item>
         <item name="android:colorPrimaryDark">@color/helmet_setting_transparent_color</item>
         <item name="android:windowBackground">@color/helmet_setting_transparent_color</item>
-        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="ActivityAnimationStyle" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fragment_slide_right_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/fragment_slide_right_out</item>
     </style>
 
 </resources>

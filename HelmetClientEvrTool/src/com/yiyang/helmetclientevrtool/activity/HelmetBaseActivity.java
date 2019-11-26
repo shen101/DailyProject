@@ -13,7 +13,7 @@ public class HelmetBaseActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.helmet_setting_base_main);
+//		setContentView(R.layout.helmet_setting_base_main);
 
 		Log.i("shen", "time = " + new Date().getTime());
 	}

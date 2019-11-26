@@ -18,8 +18,8 @@
     <string name="helmet_setting_ble_search_devices">Search Helmet</string>
     <string name="helmet_setting_ble_unbond_devices">Available equipment</string>
     <string name="helmet_setting_ble_bond_devices">Paired device</string>
-    <string name="helmet_setting_ble_turn_on_title">Turn on</string>
-    <string name="helmet_setting_ble_shut_down_title">Shut down</string>
+    <string name="helmet_setting_ble_turn_on_title">Bluetooth-On</string>
+    <string name="helmet_setting_ble_shut_down_title">Bluetooth-Off</string>
     <!-- setting hotspot -->
     <string name="helmet_setting_hotspot_title">WIFI</string>
     <string name="helmet_setting_hotspot_name_title">Hotspot:</string>
@@ -65,5 +65,14 @@
     <string name="helmet_setting_login_sign_pwd_forgot_text">Forgot</string>
     <string name="helmet_setting_login_name_null">The username you entered cannot be empty</string>
     <string name="helmet_setting_login_pwd_null">The user password you entered cannot be empty</string>
-
+    <!-- scan error -->
+    <string name="helmet_text_scan_error_one">No need to scan again while scanning</string>
+    <string name="helmet_text_scan_error_two">Unable to start scanning because I can not register</string>
+    <string name="helmet_text_scan_error_three">Fails to start scan due an internal error</string>
+    <string name="helmet_text_scan_error_four">Low power scan function is not supported</string>
+    <string name="helmet_text_scan_error_five">Fails to start scan as it is out of hardware resources</string>
+    <string name="helmet_text_bluetooth_is_no_open">BT Adapter is not turned ON!</string>
+    <string name="helmet_settings_notice_list_status_text">Please enable ERA to notify the license to operate the app that can push notifications.</string>
+    <string name="helmet_settings_ble_service_no_run">Please enter ERA settings, Bluetooth, turn on Bluetooth</string>
+    
 </resources>

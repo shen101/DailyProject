@@ -32,9 +32,9 @@ public class HelmetMainActivity extends HelmetBaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		getActionBar().hide();
 		HelmetToolsUtils.setStatusBarFullTransparent(getWindow());
 		setContentView(R.layout.helmet_main_layout);
-		getActionBar().hide();
 		initGridData();
 		initViews();
 	}
